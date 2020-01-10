@@ -1,0 +1,8 @@
+int main() {
+if ( 1 )
+  f = 11;
+
+ while ( 11 )
+ int  c1 = f;
+return 0;
+ }

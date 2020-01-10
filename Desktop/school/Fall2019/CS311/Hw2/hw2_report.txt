@@ -1,0 +1,12 @@
+Homework #2
+Mark-Nicholas Magsakay
+
+C++ Code Generator (syntactically correct)
+
+This homework assignment generates syntactically correct code in C++.
+After running the program a few times, it was becoming apparent that the code
+generated would not run. The program uses integers for loops that don't make sense
+and variables that have not been initialized. My approach to this would be to
+initialize the variables first before using them, make sure that the loop expressions
+will not use only integers. It will make sure that loop expressions are only variables
+or <exp> <op> <exp>.

@@ -1,0 +1,16 @@
+int main() {
+if ( T2 )
+ if ( 22 )
+ if ( Up )
+  Jb = 22;
+
+else
+ if ( r2 )
+ int n2;
+
+ while ( 22 )
+ int e;
+
+ int  y = 22;
+return 0;
+ }
