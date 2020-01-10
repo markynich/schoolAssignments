@@ -1,0 +1,15 @@
+Mark-Nicholas Magsakay
+
+Assignment 3 : Scanner
+Brief Summary:
+  Program reads an input file call "input.txt" and reads line by line and scans
+  the file to check if it has certain characters and sorts them into:
+    1. keywords
+    2. identifiers
+    3. integers
+    4. real
+    5. special
+
+  It stores the found characters into lists and keeps a counter of how many
+  occurrences the characters of each list appear.
+  After, it will print out the summary into a file called "summart.txt"

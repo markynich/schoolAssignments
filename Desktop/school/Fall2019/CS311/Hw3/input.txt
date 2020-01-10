@@ -1,0 +1,12 @@
+I can If else 123 (4.213) - [x-12]
+begin
+IF 32.123 [[ ] ; crazy 22
++++
+stop it+ +
+hello, world
+if  [x = 12]
+  then
+    b = 44
+ELSE
+  5000;
+end

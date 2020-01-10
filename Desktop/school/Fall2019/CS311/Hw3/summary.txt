@@ -1,0 +1,40 @@
+------------Keywords------------
+List of Inputs
+else | If | begin | IF | if | then | ELSE | end
+------Keyword Counters------
+then : 1
+begin : 1
+else : 2
+end : 1
+if : 3
+
+------------Identifiers------------
+List of Inputs
+I | can | x | crazy | stop | it | hello | world | x | b
+------Identifiers Counters------
+identifier : 10
+
+------------Integers------------
+List of Inputs
+123 | 22 | 12 | 44 | 5000
+------Integers Counters------
+integers : 5
+
+------------Real------------
+List of Inputs
+4.213 | 32.123
+------Real Counters------
+real : 2
+
+------------Special------------
+List of Inputs
+( | ) | - | [ | - | ] | [ | [ | ] | ; | + | + | + | + | + | , | [ | = | ] | = | ;
+= : 2
+; : 2
+) : 1
+( : 1
+[ : 4
+- : 2
+] : 3
++ : 5
+, : 1
