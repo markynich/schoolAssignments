@@ -1,0 +1,42 @@
+Objective: To program using the functional programming paradigm. 
+
+
+Assignment: Write the following functions using Scheme: 
+
+
+A function (binomial N k) that returns the binomial coefficients C(N, k), defined recursively as: 
+ C(N,0) = 1, C(N, N) = 1, and, for 0<k < N, C(N, k) = C(N-1, k) + C(N - 1, k -1).
+
+ 
+
+A function (mod N M) that returns the modulus remainder when dividing N by M.
+
+ 
+
+A function (binaryToDecimal b) that takes a binary number and returns its decimal value. 
+(binaryToDecimal 1101) returns 13.
+
+ 
+
+A function (addBinary binaryList) that takes a list of binary numbers and returns their decimal sum. (addBinary '(1101 111 10 101)) returns 27.
+
+ 
+
+A function (min list) that returns the smallest value in a simple list of integers.
+
+ 
+
+A function (myRemove num list) that removes all occurrences of the integer num from a simple list of integers, returning list with num removed. myRemove should return the original list if atm is not found.
+
+ 
+
+A function (selectionSort list) that returns a simple list of integers in ascending order using a recursive selection sort algorithm. Hint: use your min function.
+
+
+All the functions must be written in a functional style and must use only the basic Scheme functions car, cdr, cons, null, atom, the equality functions, the arithmetic functions, append, and the conditional functions if and cond.
+
+ 
+Be sure to write some code to demonstrate your functions on various inputs. You can place your entire solution into a single Scheme (.scm) source file.
+
+
+Some possible interpreters: repl.it (recommended for simplicity), guile (for linux environment), Dr. Scheme/Racket, mit/gnu scheme, etc.

@@ -1,0 +1,25 @@
+Assignment #1 Report
+
+Online Compiler: https://www.onlinegdb.com/online_c_compiler
+
+Brief Summary:
+
+This assignment was very tedious as there were a lot of features I had to remove
+because C did not have them. Some of the features were namespace, vectors, some
+libraries, templates, strings(as you discussed in class), cout, cin, etc. However,
+it was pretty fun as I have never coded in C before so it was nice seeing the
+big difference between the two languages.
+One of the two hardest parts of this assignment was figuring out what needed to
+be changed from C++ to C. This homework assignment had a lot of C++ only functions
+which had to be intentional as every time I changed something, the compiler
+would tell me something else. For some reason, I was not about to reference my
+char variables for passing arguments within functions, but I think that was on
+my part.
+The other hardest part of this assignment was flushing buffers. I didn't know how
+easy C++ made it for us with cout & cin. I had to learn how to buffer out extra data
+from reading strings, or using "\n" or even just reading a char. It's nice that
+C has a function for flushing the buffers, but "StackOverlow" says it is bad
+practice to use it. C programming kind of reminds me of Assembly which is why I
+enjoyed this assignment.
+Also, sorry for my terrible variable naming & ugly code. I was in a hurry and I
+know it is very bad practice.

@@ -1,0 +1,81 @@
+Assignment #5
+CS 311-02
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Problem 1. What are the arguments for and against representing Boolean values as
+single bits in memory.(Recall that the C++ bool type is actually one byte in size
+despite the fact that a logical true/false can be encoded in one bit.)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Boolean values expressed as single bits in memory will you memory especially if
+  you have very little memory to work it. However, most computers store boolean
+  values in word byte for easier reading and comparison for the computers.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Problem 2. Describe the functions performed by a garbage collector.
+What are the advantages and disadvantages of using a programming language
+with garbage collection services?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Garbage collection has two ways of recycling memory cells:
+    1.  Each memory cell has a counter for each pointer it has, when the counter
+      becomes zero, the garbage collector will see the cell as garbage and
+      deallocate it.
+    2.  The garbage collector will not worry about the memory cells until all
+      the cells are full. Once, it's full, it will see all the cells as garbage.
+      After that, it will check all cells and if a cell has pointer, it will
+      not see the cell as garbage.
+  The garbage collector handles the dirty work of deallocating unused data for
+  the programmer. Also, programmer does not have to worry about a memory leak within
+  the program and crashing for running out of memory.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Problem 3. Recall that many programming languages use short circuit evaluation when
+determining the result of a complex boolean expression involving add/or operations.
+What are the benefit of using short circuit evaluations?
+Are there are safety/reliability issues involved? If so, what are they?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Short circuit evaluations are a great way to prevent errors. They help skip
+  certain blocks of code and execute certain blocks of code. Although boolean
+  variables don't use a lot of memory, short circuit evaluations helps save
+  that small amount of memory.
+  Short circuit evaluations have a few issues. For instance, an "or" operation starts
+  executing the code block if either conditions are true, but if the second condition
+  needed to be executed for the program, it will never run as the first condition
+  will enable the program to execute the code block without running the second
+  condition. Secondly, short circuit evaluations can have readability issues as
+  they can grow longer in size which makes it harder for people to read/understand.
+  Finally, short circuit evaluations use extra execution cycles.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Problem 4: Describe how the following programming languages deal with the dangling
+else issue: C++, Java, Ruby, and Python.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  C++ and Java handles the dangling else issue the same way as they connect the
+  dangling else with the inner most "closest" if statement. Ruby has a nice way of
+  handling the issue as the syntax of an "if" statement needs an "end" command
+  for every "if". It helps clarify where the else statement belongs. Python is
+  indentation-based as the else statement aligns with the closest if within the
+  same indentation.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Problem 5: Discuss the differences between name type and structure type equivalence.
+Explain some potential challenges with implementing structure type equivalence.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Name type equivalence compares the name of the type that was copied from the
+  compiler. Even if the two variables have the same type, the names assigned to
+  the variables are different, so they are not equivalent. Also, if there was no
+  name for that type within the compiler before, it will assign that variable as
+  "anonymous". Comparing "anonymous" with "anonymous" is not equivalent unless the
+  variables were assigned on the same line and compared with internal name type.
+  Structure type equivalence compares the data type of the two variables. Regardless
+  of the name, if both variables are the same data type, they are equivalent.
+
+  Potential challenges with implementing the structure type equivalence are the
+  many situations the programmer needs to cover. For instance, it's difficult to
+  differentiate types that have the same structure. Would a list with one more
+  element compared to the other list equivalent because they are the same structure?
+  What if two different enumerations have the same amount of elements, but the
+  literals are different by uppercase/lowercase, are they equivalent?
