@@ -1,0 +1,30 @@
+Assignment #2
+
+This assignment gets a user input of 1 - 25
+and prints out each permutation into a file
+called output.txt
+
+This project uses 2 files:
+  1. header file "permutation.h"
+  2. driver file "main.cpp"
+
+The project contains 5 files:
+  1. header file "permutation.h"
+  2. driver file "main.cpp"
+  3. picture of example output file
+  4. picture of example command line output
+  5. Project file to explain the contents
+
+Project functions:
+  Standard Setters & Getters for size of array
+  Standard constructor(not overloaded) & deconstructor
+  writeIntoFile:
+    Opens the fstream and if "output.txt" is not created, it will create the file.
+    Each permutation gets added into the file and the file appends each line
+    to the bottom
+  storeArr:
+    Stores the numbers from 1 - [userinput] into the array
+  permute:
+    swaps numbers and recalls itself to create the permutations.
+    After the permutation is created, it will call writeIntoFile to add
+    into the file.

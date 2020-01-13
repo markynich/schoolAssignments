@@ -1,0 +1,22 @@
+test
+List has length of 0
+5 is added into list
+7 is added into list
+6 is added into list
+9 is added into list
+5 7 6 9 
+1 is added into list
+5 7 6 9 1 
+4 is not found in list
+5 is found in list
+9 is found in list
+10 is not found in list
+List is full(max is 5 numbers)
+5 is deleted from list
+1 is deleted from list
+List is not full
+6 is deleted from list
+7 9 
+9 is deleted from list
+List is now empty
+List is empty

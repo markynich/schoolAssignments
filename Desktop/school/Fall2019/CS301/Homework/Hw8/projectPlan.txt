@@ -1,0 +1,66 @@
+Assignment #8 : Priority Queue
+
+Brief Summary:
+  This program reads in an input file that the user specifies
+  and stores the output into an output file that the user
+  also specifies. Also, the program prints out into the commandline
+  whenever a line is read from the input file. This program reads
+  in commands that specifies the program to enqueue a number, dequeue
+  a number, make the queue empty, check if the queue is full, and check
+  if the queue is empty. The queue has priority from highest to lowest.
+
+  Files:
+    Heap.h
+    main
+    main.cpp
+    outputFile.txt
+    PQ_Input_File.in
+    PQType.h
+
+  Heap.h:
+    This file has a struct to implement a Heap structure with a dynamic array
+    and a template class for dynamic data types
+    Functions from this file:
+      Swap:
+        Takes in two referenced parameters and swaps them
+      ReheapUp:
+        Takes in two int parameters, 1 for root and another for lowest level
+        of the tree. It checks if parent Node of passed in child parameter
+        is less than child parameter. If yes, swaps values and recursively calls
+        itself passing in root and parent Node index.
+      ReheapDown:
+        Takes in two int parameters, 1 for root and 1 for lowest level of the tree.
+        It finds biggest value between the two children nodes. If greater child
+        node value is bigger than root value, swap values and recursively call
+        itself passing in greater Node index and lowest level index.
+  main:
+    Executable file to run program
+  main.cpp:
+    driver file to run program. It is a pre-written file that reads in a file
+    and outputs anther file. It executes whenever the file that is read contains
+    a certain command. Program exits after every line is read.
+  outputFile.txt:
+    Example of output after the program is executed
+  PQ_Input_File.in
+    File that contains all the commands that the program will read
+  PQType.h:
+    Class for controlling and creating the Priority Queue. This file is also
+    implementing the template class for dynamic data types
+    Functions from this file:
+    PQType(int):
+      Constructor of the class which sets the values of how big the queue can
+      be, the starting point of the queue, and max amount of values can be added
+      into the Queue.
+    ~PQType():
+      Destructor of the class. Deletes the dynamic array for no memory leak
+    MakeEmpty():
+      Makes the Queue empty by setting length to 0
+    IsEmpty():
+      Checks if Queue is empty
+    IsFull():
+      Checks if Queue is Full
+    Enqueue(ItemType newItem):
+      If queue is not full, add new item into the queue and ReheapUp the queue
+    Dequeue(ItemType& item):
+      If queue is not empty, delete item that is in the queue and ReheapDown the
+      queue.

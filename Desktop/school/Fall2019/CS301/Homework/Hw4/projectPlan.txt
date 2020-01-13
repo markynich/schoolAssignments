@@ -1,0 +1,80 @@
+Assignment 4 - Gradebook
+
+This Assignment is an emulator the user to be like a teacher. The user has
+tasks to make semesters, weights & amounts of programs, tests, and finals,
+enter the grades for each program, test, and final, save data into a .dat file
+called "Grades.dat", and once the user is all done, it will print .out file
+called "Grades.out". Also, during each transaction, it is recorded into a file
+called "Grades.trn"
+
+Files:
+Project folder contains:
+  schoolSystem.h
+  schoolSystem.cpp
+  schoolCommands.h
+  schoolCommands.cpp
+  main.cpp
+  main
+  Grades.dat
+  Grades.out
+  Grades.trn
+
+main.cpp:
+  main driver file for the program.
+  it called the object School Commands and the function readCommand();
+
+schoolSystem :
+  This file has a header and implementation file which holds all the data for
+  the program. It Contains all the getters and setters for all the other files
+  to use to manipulate the data. This file also writes and read the data files
+  "Grades.dat", "Grades.out", "Grades.trn". It also has the important functions
+  to sort data such as the names of students.
+
+schoolCommands :
+  This file has a header and implementation file that is a derived class from
+  schoolSystem contains all the functions to execute the program:
+  0. readCommand() - is the function that the user gets to choose which command
+      he/she can execute & after every execution, it goes back to readCommand()
+
+  1. Command_S() - Lets the user delete the previous data and start a new semester.
+      User will enter weight % of programs, tests, and finals. The weight % must be
+      100% when you add the 3 weights together. After that, the user will get to
+      enter the amount of programs(max 6), tests(max 4), and finals (max 1).
+      The user can only execute this command when the final transcripts have been
+      outputted ("Grades.out"). When executed, "Grades.dat" & "Grades.out" will
+      be deleted.
+
+  2. Command_A() - Lets the user add students into the system by asking for his/her
+      first name, last name, & student ID. Students can have the same name, but never
+      the same ID. If user enters an ID that's already used, it will ask the user for
+      a new one until the user gives an ID that's not used yet. Each time the command
+      is called, it will print out all the units the system currently has. This
+      command can only be called during a new semester, so once the user grades anything,
+      he/she cannot add anymore students.
+  3. Command_P() - Prints out which programs have been graded or not, then the user
+      can choose which program to grade and enter a grade for each student alphabetically.
+      User has option to quit before choosing a program to grade. Also, if the user
+      has no programs for the semester, the command will not execute and print out an error
+      and continue back to readCommand();
+  4. Command_T() - Prints out which tests have been graded or not, then the user
+      can choose which test to grade and enter a grade for each student alphabetically.
+      User has option to quit before choosing a test to grade. Also, if the user
+      has no test for the semester, the command will not execute and print out an error
+      and continue back to readCommand();
+  5. Command_F() - Prints out if the final has been graded or not, then the user
+      can choose to grade the final and enter a grade for each student alphabetically.
+      or to quit before grading the final. Also, if the user has no final for the
+      semester, the command will not execute and print out an error
+      and continue back to readCommand();
+  6. Command_C() - Print out all the students for the user to pick to change his/her
+      grade for a certain program, test, or final. The user will get to choose which
+      one he/she would like to change.
+  7. Command_G() - Command can only be ran once all programs, tests, and finals are
+      graded during that semester. Once they are all graded, it will get the averages
+      and final grade for that semester and submit it into the system.
+  8. Command_O() - Command can only be ran once the final grades have been submitted.
+      Once the final grades are submitted, it will produce the output file "Grades.out"
+      for the user to see the end of semester transcript. Setting the end semester flag on.
+  9. Command_Q() - Command will let the user quit the program, but if the end semester
+      flag is on, it will delete "Grades.dat". Other than that, it will save the current
+      data onto "Grades.dat" and exit the program for the user.

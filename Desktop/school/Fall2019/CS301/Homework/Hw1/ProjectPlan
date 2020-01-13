@@ -1,0 +1,33 @@
+Project Plan
+Assignment 1
+
+This project uses three files:
+  1 header file called number_bucket.h
+  1 driver file called main.cpp
+  1 picture file called screenshort_assignment1.png
+
+The number_bucket.h file contains a class called number_bucket
+that contains functions, constructor, destructor, and a private stack to store
+the numbers in a LIFO format.
+Functions:
+  getNumber - get number within top of stack
+  getBucket - print out stack from top to bottom
+  push - insert number within stack
+  pop - remove number within stack in LIFO order
+  isEmpty - to check the stack is empty or not empty
+  get_size - get the size of the stack
+
+The main.cpp file creates a class object called numBucket to use the functions
+within the class.
+Also, the driver class a few steps:
+  1. to show the constructor is initialized
+  2. check the stack is empty
+  3. add 10 numbers in the stack with push function
+  4. check the stack is not empty
+  5. print out the stack
+  6. remove 3 numbers in LIFO order with pop function
+  7. check the stack is not empty
+  8. print out the stack to show 3 numbers are gone
+  9. clear out the stack
+  10. check the stack is empty
+  11. Destructor is called.

@@ -1,0 +1,50 @@
+Homework #9 : Sorting
+
+Brief Summary:
+	This program reads an input file which reads commands to run different
+	sorting functions to test which sorting function is faster. It will print out
+	the output to the name the user inputs
+
+Files:
+	all.log
+	BubbleSort.h
+	InsertionSort.h
+	main
+	main.cpp
+	MergeSort.h
+	QuickSort.h
+	QuickSort2.h
+	SelectionSort.h
+	ShortBubble.h
+	Sorts.in
+	Swap.h
+
+all.log:
+	output of the command executions
+BubbleSort.h:
+	Sorting function which compares from index to index-1
+InsertionSort.h:
+	Sorting function which go through the index and finds 1 element at a time
+	pushing the list forward or backward to insert element
+main:
+	executable file to run program
+main.cpp:
+	driver file which has the implementation of reading the commands
+	and recording how long each sort function takes
+MergeSort.h:
+	Sorting function which breaks down the list and sorts until the list
+	is together and is fully sorted
+QuickSort.h:
+	Sorting function which breaks the list into partitions and sorts the
+	partitions and combines them until it is fully sorted
+QuickSort2.h:
+	Similar to QuickSort.h, but it is premade from auther/professor
+SelectionSort.h:
+	Sorting function which go through the index and finds 1 element at a time
+ShortBubble.h:
+	Similar to BubbleSort.h except the function has a helper function
+Sorts.in:
+	Input file for commands to execute
+Swap.h:
+	swap function to swap elements from the list
+	

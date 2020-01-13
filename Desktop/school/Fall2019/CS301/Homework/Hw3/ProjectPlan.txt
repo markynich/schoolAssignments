@@ -1,0 +1,60 @@
+Homework Assignment #3 contains 9 files:
+  1. ItemType.cpp
+  2. ItemType.h
+  3. list.cpp
+  4. list.h
+  5. listData.txt
+  6. main
+  7. main.cpp
+  8. output.txt
+  9. commandLine.png
+
+  What this program does:
+    - asks the user for an input file for all commands to be run
+    - asks the user for an output file for the output of each command
+    - asks the user for a name for the test that will be executed
+    - reads line by line from the input file for commands to be executed
+    - displays within console if each command is successfully executed or failed
+    - writes into the output file
+
+I have used the files provided with the assignment:
+  - ItemType.cpp (Implementation for ItemType.h)
+  - ItemType.h (header file for all functions)
+  - listData.txt (commands to be executed)
+
+Files that I have created for the assignment:
+  - list.cpp (Implementation for list.cpp)
+  - list.h (header file for linked list, nodes, & pointers)
+  - main.cpp (driver file for the whole program)
+  - main (executable file to run program)
+  - output.txt (file for output to be written into & contain example run)
+  - commandLine.png (picture example of console output)
+
+Brief Explanation:
+  list.h is a base class called List for the Linked List to store values into.
+  ItemType.h is a derived class that uses the functions and Linked List to manipulate
+    and contains all main functions for Hw #3 Ex: GetLength,PutItem, etc.
+  My function: FunctionList returns a value from 0-9 to tell the program if the
+    command that is read from the input file is a legit command or not.
+    Sadly, it is case sensitive as I did not know if it was supposed to be or not.
+  The linked list has a max cap of 5 items as ItemType.h contained a const int
+  called MAX_ITEMS which equalled to 5.
+  Program will keep asking the user an input file until it successfully finds an
+  input file that can be opened within the current directory.
+
+ Functions:
+  Print - writes into the output file with the passing string value
+  Initialize - makes the private int value = MAX_ITEMS
+  getLength - gets the length of the Linked List
+  PutItem - calls addNode and puts in the passing integer into list
+  getItem - calls searchNode and checks if passing integer is inside the list
+  isFull - checks if the list is Full by comparing getSize with MAX_ITEMS
+  DeleteItem - calls DeleteNode and removes passing integer from the list if it exists
+  MakeEmpty - calls emptyList and clears out the Linked List
+  FunctionList - Return value function to tell driver file if commands exists
+  addNode - inserts passing integer into node
+  DeleteNode - removes passing integer from list & returns true or false
+  printList - puts list into a string and passes it back to Print
+  searchNode - looks for passing integer inside of list
+  getSize - gets size of list
+  emptyList - clears the linked list

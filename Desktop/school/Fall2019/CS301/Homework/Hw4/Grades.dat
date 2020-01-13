@@ -1,0 +1,6 @@
+progSize-testSize-numFinals-pWeight-tWeight-fWeight
+3,2,1,40,30,30
+FirstName-LastName-studentID-prog1-prog2-prog3-prog4-prog5-prog6-progAvg-test1-test2-test3-test4-testAvg-fExam-fGrade
+Denna,B,7,87,86,91,0,0,0,88,87,87,0,0,87,84,86
+Kero,H,34,93,76,78,0,0,0,82,91,93,0,0,92,79,82
+Mark,M,12,76,98,88,0,0,0,87,77,82,0,0,79,74,79
