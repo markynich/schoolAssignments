@@ -1,0 +1,59 @@
+\hypertarget{main_8cpp}{\subsection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab2.\+h\char`\"{}}\\*
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+\hyperlink{main_8cpp}{main.\+cpp} Displays the linked list in three different ways, one way is normal insertion, second is in alphabetical order, and third is directly. They all build, then get destroyed, and rebuild to make sure it is destroyed. 
+\begin{DoxyCode}
+11           \{
+12 std::cout<< \textcolor{stringliteral}{"Displaying List with Insert\(\backslash\)n\(\backslash\)n"};
+13     \hyperlink{structNODE}{NODE}* head = \hyperlink{lab2_8h_a32d5af33259b5aaf9aa553c5d81049b0}{loadList}(\textcolor{stringliteral}{"cities"});
+14     \textcolor{keywordflow}{if}(head)
+15     \{   
+16         \hyperlink{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{displayList}(head);
+17         \hyperlink{destroyList_8cpp_ae4c3d5a7f0c1b60f329a966c2e8e9cbd}{destroyList}(head);
+18         head =0;
+19         \hyperlink{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{displayList}(head);
+20     \}
+21 std::cout<< \textcolor{stringliteral}{"Displaying List with InsertInOrder\(\backslash\)n\(\backslash\)n"};
+22     head = \hyperlink{lab2_8h_aacfafc1182d00a8d4510660bd4190621}{loadList2}(\textcolor{stringliteral}{"cities"});
+23     \textcolor{keywordflow}{if}(head)
+24     \{   
+25         \hyperlink{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{displayList}(head);
+26         \hyperlink{destroyList_8cpp_ae4c3d5a7f0c1b60f329a966c2e8e9cbd}{destroyList}(head);
+27         head=0;
+28         \hyperlink{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{displayList}(head);
+29     \}
+30 std::cout<< \textcolor{stringliteral}{"Displaying List with BuildDirectly\(\backslash\)n\(\backslash\)n"};
+31     head = \hyperlink{lab2_8h_af65c98abd6063427c4a82cc65bb7d813}{loadList3}(\textcolor{stringliteral}{"cities"});
+32     \textcolor{keywordflow}{if}(head)
+33     \{  
+34         \hyperlink{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{displayList}(head);
+35         \hyperlink{destroyList_8cpp_ae4c3d5a7f0c1b60f329a966c2e8e9cbd}{destroyList}(head);
+36         head=0;
+37         \hyperlink{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{displayList}(head);
+38     \}
+39     \textcolor{keywordflow}{return} 0;
+40 \}
+\end{DoxyCode}

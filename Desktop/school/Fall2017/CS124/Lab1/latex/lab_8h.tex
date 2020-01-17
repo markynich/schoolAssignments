@@ -1,0 +1,153 @@
+\hypertarget{lab_8h}{\subsection{lab.\+h File Reference}
+\label{lab_8h}\index{lab.\+h@{lab.\+h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+Include dependency graph for lab.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{lab_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structENTRY}{E\+N\+T\+R\+Y}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{lab_8h_a14d9a1d2cb42104c2d9cf01571b162a7}{load\+Dictionary} (string file\+Name, vector$<$ \hyperlink{structENTRY}{E\+N\+T\+R\+Y} $>$ \&dict)
+\item 
+bool \hyperlink{lab_8h_abec3741182deca1e3f68c16664818602}{save\+Dictionary} (string file\+Name, vector$<$ \hyperlink{structENTRY}{E\+N\+T\+R\+Y} $>$ \&dict)
+\item 
+ostream \& \hyperlink{lab_8h_a688336c15d16ffa3caf27445aca483bb}{operator$<$$<$} (ostream \&o, const \hyperlink{structENTRY}{E\+N\+T\+R\+Y} \&e)
+\item 
+istream \& \hyperlink{lab_8h_a57953bc31ef3f15842944285e23a8403}{operator$>$$>$} (istream \&i, const \hyperlink{structENTRY}{E\+N\+T\+R\+Y} \&e)
+\item 
+bool \hyperlink{lab_8h_ad83379496bba9df383b529634c2d415f}{found\+Word} (const vector$<$ \hyperlink{structENTRY}{E\+N\+T\+R\+Y} $>$ \&dict, const string \&word, string \&stranslation)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8h_ad83379496bba9df383b529634c2d415f}{\index{lab.\+h@{lab.\+h}!found\+Word@{found\+Word}}
+\index{found\+Word@{found\+Word}!lab.\+h@{lab.\+h}}
+\paragraph[{found\+Word}]{\setlength{\rightskip}{0pt plus 5cm}bool found\+Word (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf E\+N\+T\+R\+Y} $>$ \&}]{dict, }
+\item[{const string \&}]{word, }
+\item[{string \&}]{stranslation}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_ad83379496bba9df383b529634c2d415f}
+
+\begin{DoxyCode}
+19 \{
+20     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false}; \textcolor{comment}{//if the word is not found, it will return false}
+21     \textcolor{comment}{//integer for the for loop and len is for the length of the vector}
+22     \textcolor{keywordtype}{int} i, len = dict.size();
+23     \textcolor{comment}{/*for loop which is needed to find the word in dictionary}
+24 \textcolor{comment}{     which in turn gives the translation of the word*/}
+25     \textcolor{keywordflow}{for} (i = 0; !found && i < len; i++) \{
+26         \textcolor{keywordflow}{if} (dict[i].word == word)\{
+27             translation = dict[i].translation;
+28             found = \textcolor{keyword}{true};
+29         \}\textcolor{comment}{//end of if}
+30     \} \textcolor{comment}{//end of for}
+31     \textcolor{keywordflow}{return} found; \textcolor{comment}{//returns the translation to user for it to be output}
+32 \} \textcolor{comment}{//end of bool}
+\end{DoxyCode}
+\hypertarget{lab_8h_a14d9a1d2cb42104c2d9cf01571b162a7}{\index{lab.\+h@{lab.\+h}!load\+Dictionary@{load\+Dictionary}}
+\index{load\+Dictionary@{load\+Dictionary}!lab.\+h@{lab.\+h}}
+\paragraph[{load\+Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}bool load\+Dictionary (
+\begin{DoxyParamCaption}
+\item[{string}]{file\+Name, }
+\item[{vector$<$ {\bf E\+N\+T\+R\+Y} $>$ \&}]{dict}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a14d9a1d2cb42104c2d9cf01571b162a7}
+
+\begin{DoxyCode}
+20 \{   \textcolor{comment}{//integer needed for counting how many words are in dictionary}
+21     \textcolor{keywordtype}{int} cnt = 0; 
+22     \hyperlink{structENTRY}{ENTRY} e; \textcolor{comment}{//to access the vector ENTRY which contain word and translation}
+23     ifstream inpFile(fileName.c\_str());
+24     \textcolor{keywordflow}{if} (!inpFile) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{//if file does not open, it will return false}
+25     \textcolor{keywordtype}{string} title; \textcolor{comment}{//string to contain title}
+26     getline(inpFile, title); \textcolor{comment}{//to get the title from the text file}
+27     cout << title << endl; \textcolor{comment}{//to print the title of the program}
+28     cout << \textcolor{stringliteral}{"....................................."} << endl;
+29     \textcolor{keywordflow}{while} (inpFile >> e.\hyperlink{structENTRY_a7dfcf0a0b27dc7cecf80565a615d6233}{word} >> e.\hyperlink{structENTRY_aeffa74a793268864bbbdf6a3645bf36a}{translation}) \{
+30         dict.push\_back(e);
+31         inpFile.ignore(80, \textcolor{charliteral}{'\(\backslash\)n'}); \textcolor{comment}{//skip the rest of the line}
+32         cnt++;
+33     \}\textcolor{comment}{//end of while for inpFile}
+34     
+35     cout << \textcolor{stringliteral}{" ("} << cnt << \textcolor{stringliteral}{" words)\(\backslash\)n\(\backslash\)n"}; \textcolor{comment}{//prints out the number of words}
+36     \textcolor{comment}{//prints out the number of vectors used}
+37     cout << \textcolor{stringliteral}{" ("} << dict.size() << \textcolor{stringliteral}{" size of vector)\(\backslash\)n\(\backslash\)n"};
+38     
+39     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+40 \} \textcolor{comment}{//end of bool loadDictionary}
+\end{DoxyCode}
+\hypertarget{lab_8h_a688336c15d16ffa3caf27445aca483bb}{\index{lab.\+h@{lab.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{o, }
+\item[{const {\bf E\+N\+T\+R\+Y} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a688336c15d16ffa3caf27445aca483bb}
+\hypertarget{lab_8h_a57953bc31ef3f15842944285e23a8403}{\index{lab.\+h@{lab.\+h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{i, }
+\item[{const {\bf E\+N\+T\+R\+Y} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a57953bc31ef3f15842944285e23a8403}
+\hypertarget{lab_8h_abec3741182deca1e3f68c16664818602}{\index{lab.\+h@{lab.\+h}!save\+Dictionary@{save\+Dictionary}}
+\index{save\+Dictionary@{save\+Dictionary}!lab.\+h@{lab.\+h}}
+\paragraph[{save\+Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}bool save\+Dictionary (
+\begin{DoxyParamCaption}
+\item[{string}]{file\+Name, }
+\item[{vector$<$ {\bf E\+N\+T\+R\+Y} $>$ \&}]{dict}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_abec3741182deca1e3f68c16664818602}
+
+\begin{DoxyCode}
+20 \{   
+21     \textcolor{keywordtype}{string} input; \textcolor{comment}{//to get user's input}
+22     \hyperlink{structENTRY}{ENTRY} e; \textcolor{comment}{//to access the vector ENTRY}
+23     fstream saveFile; \textcolor{comment}{//object to access text file 'dict.dat'}
+24     saveFile.open(fileName.c\_str(), ios::app); \textcolor{comment}{//to open text file}
+25     \textcolor{comment}{//to tell the user the word is not in the dictionary}
+26     cout << e.\hyperlink{structENTRY_a7dfcf0a0b27dc7cecf80565a615d6233}{word} << \textcolor{stringliteral}{" -- not in the dictionary.\(\backslash\)n\(\backslash\)n"};
+27     cout << \textcolor{stringliteral}{"Would you like to add translation? (y/n) "};
+28     cin >> input; \textcolor{comment}{//taking in user's input}
+29     \textcolor{comment}{/*if loop that if the user wants to add their word and translation}
+30 \textcolor{comment}{      into the dictionary, they must type 'y', if not, anything else}
+31 \textcolor{comment}{      to continue the code.}
+32 \textcolor{comment}{    */}
+33             \textcolor{keywordflow}{if}(input == \textcolor{stringliteral}{"y"})
+34                 \{   
+35                     \hyperlink{structENTRY}{ENTRY} e;
+36                     cout << \textcolor{stringliteral}{"Enter the word you want to put in the dictionary "} << endl;
+37                     cin >> e.\hyperlink{structENTRY_a7dfcf0a0b27dc7cecf80565a615d6233}{word}; \textcolor{comment}{//take in user input for word}
+38                     cout << \textcolor{stringliteral}{"Enter the translation: "} << endl;
+39                     cin >> e.\hyperlink{structENTRY_aeffa74a793268864bbbdf6a3645bf36a}{translation}; \textcolor{comment}{//take in user input for translation}
+40                     dict.push\_back(e); \textcolor{comment}{// enters user input to last element of vector}
+41                     \textcolor{comment}{//saves user's input into the text file}
+42                     saveFile << e.\hyperlink{structENTRY_a7dfcf0a0b27dc7cecf80565a615d6233}{word} << \textcolor{stringliteral}{" "} << e.\hyperlink{structENTRY_aeffa74a793268864bbbdf6a3645bf36a}{translation} << endl;
+43 
+44                 \}
+45 \}
+\end{DoxyCode}

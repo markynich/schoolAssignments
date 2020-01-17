@@ -1,0 +1,49 @@
+\hypertarget{loadList3_8cpp}{\subsection{load\+List3.\+cpp File Reference}
+\label{loadList3_8cpp}\index{load\+List3.\+cpp@{load\+List3.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab2.\+h\char`\"{}}\\*
+Include dependency graph for load\+List3.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{loadList3_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNODE}{N\+O\+D\+E} $\ast$ \hyperlink{loadList3_8cpp_af65c98abd6063427c4a82cc65bb7d813}{load\+List3} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em This function builds the list directly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{loadList3_8cpp_af65c98abd6063427c4a82cc65bb7d813}{\index{load\+List3.\+cpp@{load\+List3.\+cpp}!load\+List3@{load\+List3}}
+\index{load\+List3@{load\+List3}!load\+List3.\+cpp@{load\+List3.\+cpp}}
+\paragraph[{load\+List3}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\+O\+D\+E}$\ast$ load\+List3 (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{loadList3_8cpp_af65c98abd6063427c4a82cc65bb7d813}
+
+
+This function builds the list directly. 
+
+
+\begin{DoxyImage}
+\includegraphics{./lab2fig3}
+\caption{Linked List}
+\end{DoxyImage}
+
+\begin{DoxyCode}
+6 \{
+7     \hyperlink{structNODE}{NODE}* head = 0;  \textcolor{comment}{//puts head to null}
+8     std::ifstream inputFile(filename.c\_str()); \textcolor{comment}{//taking input}
+9     std::string city; \textcolor{comment}{//to use string city for list}
+10     \textcolor{keywordflow}{while} (inputFile >> city) \textcolor{comment}{// loop to grab information}
+11         \textcolor{keywordflow}{if} (\hyperlink{BuildListDirectly_8cpp_ab32b9fbd1845e8bb3da2bf84d741ccf3}{BuildListDirectly}(head, city) == \hyperlink{lab2_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED})
+12             std::cerr << \textcolor{stringliteral}{"Error on Insert\(\backslash\)n"};
+13             \textcolor{comment}{//if statements that catches error if it cannot}
+14         \textcolor{comment}{//get linked list information}
+15     \textcolor{keywordflow}{return} head; \textcolor{comment}{//returns head}
+16 \}
+\end{DoxyCode}

@@ -1,0 +1,50 @@
+\hypertarget{main_8cpp}{\subsection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}morse.\+h\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCode}
+5 \{
+6     \hyperlink{classTelegraph_a2ace7d6ba4d3742dbcc57d6a36a13b54}{Telegraph::open}();
+7     \hyperlink{classTelegraph}{Telegraph} t;
+8     std::string str = getenv(\textcolor{stringliteral}{"QUERY\_STRING"});
+9     std::string strOG = str; std::string strInput = str;
+10     strOG.erase(1,30); \textcolor{comment}{// extract first char}
+11     strInput.erase(0,2); \textcolor{comment}{// extract the string from the text field }
+12     \textcolor{keywordflow}{if} ( strOG == \textcolor{stringliteral}{"d"}) \{ \textcolor{comment}{// Split string where the +'s are instead of converting to spaces}
+13         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < strInput.size(); i++) \textcolor{comment}{// Convert all +'s to spaces}
+14             \textcolor{keywordflow}{if}(strInput[i] == \textcolor{charliteral}{'+'})
+15                 strInput[i] = \textcolor{charliteral}{' '};
+16         strInput += \textcolor{stringliteral}{" .."};
+17         \textcolor{comment}{//std::cout << strInput << std::endl;}
+18         \textcolor{keywordtype}{char} text[strInput.length() + 1];
+19         strcpy(text, strInput.c\_str());
+20         \textcolor{keywordtype}{char} eMorse[600];
+21         t.\hyperlink{classTelegraph_a09985235f674760465da3bbd9e136d12}{Decode}(text, eMorse);
+22         std::cout << \textcolor{stringliteral}{"<html><h2>ABC:</h2><h3>"} << eMorse << \textcolor{stringliteral}{"</h3></html>"} << std::endl;
+23     \}
+24     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ( strOG == \textcolor{stringliteral}{"e"}) \{
+25         \textcolor{keywordtype}{char} morse[strInput.length() + 1];
+26         strcpy(morse, strInput.c\_str());
+27         \textcolor{keywordtype}{char} dText[600];
+28         t.\hyperlink{classTelegraph_a73c4f9c8862ba581ec5eac6530bf6352}{Encode}(morse, dText);
+29         std::cout << \textcolor{stringliteral}{"<html><h2>Morsecode:</h2><h3>"} << dText << \textcolor{stringliteral}{"</h3></html>"} << std::endl;
+30     \}
+31     \hyperlink{classTelegraph_a4b7e7f129e6aedc1c3f9b354806f265e}{Telegraph::close}();
+32 \}
+\end{DoxyCode}

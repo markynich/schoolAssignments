@@ -1,0 +1,408 @@
+\hypertarget{classHEAP}{\subsection{H\+E\+A\+P$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$ Class Template Reference}
+\label{classHEAP}\index{H\+E\+A\+P$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$@{H\+E\+A\+P$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$}}
+}
+
+
+This is a class \hyperlink{classHEAP}{H\+E\+A\+P} which includes all function and storage needed to make the program and tree.  
+
+
+
+
+{\ttfamily \#include $<$H\+E\+A\+P.\+H$>$}
+
+
+
+Collaboration diagram for H\+E\+A\+P$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classHEAP__coll__graph}
+\end{center}
+\end{figure}
+\subsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27}{heap\+Type} \{ \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27af40ccc5dc19d4acb72467707512926c6}{M\+A\+X}, 
+\hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27a38253c74a285d04166dcc555cb4c8f19}{M\+I\+N}
+ \}
+\end{DoxyCompactItemize}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classHEAP_a341e0d88f79b41d55f804b759646d13c}{H\+E\+A\+P} (int a\+\_\+size, \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27}{heap\+Type})
+\begin{DoxyCompactList}\small\item\em This is a constructor which build a heap tree of size a\+\_\+size. \end{DoxyCompactList}\item 
+\hyperlink{classHEAP_a7a99ff54ff586bbee33e36828bb7a2f7}{$\sim$\+H\+E\+A\+P} ()
+\begin{DoxyCompactList}\small\item\em This is a destructor to destroy the heap trees. \end{DoxyCompactList}\item 
+bool \hyperlink{classHEAP_a560500cc8aa1dc1d07dbc4e6c4d1b5f3}{Is\+Empty} ()
+\item 
+bool \hyperlink{classHEAP_ac2560a1c0edc4cecc583880fe6006a91}{Is\+Full} ()
+\item 
+\hyperlink{HEAP_8H_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{classHEAP_a61daf2c080cdb92947a0e591fbd8d772}{Insert} (S\+O\+M\+E\+T\+Y\+P\+E x)
+\begin{DoxyCompactList}\small\item\em This is a insert function to add data into the heap trees. \end{DoxyCompactList}\item 
+\hyperlink{HEAP_8H_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{classHEAP_aedf7ac5c115a4d0bb96139da8788f26a}{Remove} (S\+O\+M\+E\+T\+Y\+P\+E \&x)
+\begin{DoxyCompactList}\small\item\em This is a remove function to remove data from the heap trees. \end{DoxyCompactList}\item 
+void \hyperlink{classHEAP_a07fcd2f8486f24a64f216a7c2bfdbf77}{print\+Heap} ()
+\begin{DoxyCompactList}\small\item\em This is a function that prints out the heap tree. \end{DoxyCompactList}\item 
+void \hyperlink{classHEAP_a935705273d6321f27ff5e73f6a86f220}{add\+Max\+H\+V} (int value)
+\item 
+void \hyperlink{classHEAP_a49697dff68d8383e2aec0cd757fd4201}{push\+Max\+Heap\+Data} ()
+\begin{DoxyCompactList}\small\item\em This is a push function that pushes information from max\+Heap into a vector. \end{DoxyCompactList}\item 
+void \hyperlink{classHEAP_a60ee205bf01ba40b2de104f9058e612f}{display\+Vector} ()
+\item 
+void \hyperlink{classHEAP_a3c1097a2a0b425a08a8da33c2c35edf7}{temp\+Max\+Heap} ()
+\begin{DoxyCompactList}\small\item\em This is a funcction that adds the information from max\+Heap into a temp vector. \end{DoxyCompactList}\item 
+void \hyperlink{classHEAP_a5985dc9dbed06ce7aa3899b40ab80134}{temp\+Min\+Heap} ()
+\begin{DoxyCompactList}\small\item\em This is a function that adds the information from min\+Heap into a temp vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S\+O\+M\+E\+T\+Y\+P\+E $\ast$ \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}
+\item 
+int \hyperlink{classHEAP_a660f8fd84a9646a631badb8c6ca87aca}{size}
+\item 
+int \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{n\+Nodes}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classHEAP_a541eab0dba5cd90e27be6083b1a1979f}{min\+H\+V}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classHEAP_a33776b33a838c2116349c676ac2a7249}{max\+H\+V}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classHEAP_adc22726c34c72025819274f63d8bb418}{index\+Min\+H\+V}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{classHEAP_af6c485575f29a80d91f611af87b7f6b8}{index\+Max\+H\+V}
+\item 
+int \hyperlink{classHEAP_a82daf731595f82a6224fc9360b63a58d}{temp\+Max\+V}
+\item 
+int \hyperlink{classHEAP_a0402f157889d6b40f219c608bc9a3503}{temp\+Min\+V}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+\subsubsection*{template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$class H\+E\+A\+P$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$}
+
+This is a class \hyperlink{classHEAP}{H\+E\+A\+P} which includes all function and storage needed to make the program and tree. 
+
+\subsubsection{Member Enumeration Documentation}
+\hypertarget{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27}{\index{H\+E\+A\+P@{H\+E\+A\+P}!heap\+Type@{heap\+Type}}
+\index{heap\+Type@{heap\+Type}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{heap\+Type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ enum {\bf H\+E\+A\+P\+::heap\+Type}}}\label{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\+A\+X@{M\+A\+X}!H\+E\+A\+P@{H\+E\+A\+P}}\index{H\+E\+A\+P@{H\+E\+A\+P}!M\+A\+X@{M\+A\+X}}\item[{\em 
+\hypertarget{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27af40ccc5dc19d4acb72467707512926c6}{M\+A\+X}\label{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27af40ccc5dc19d4acb72467707512926c6}
+}]\index{M\+I\+N@{M\+I\+N}!H\+E\+A\+P@{H\+E\+A\+P}}\index{H\+E\+A\+P@{H\+E\+A\+P}!M\+I\+N@{M\+I\+N}}\item[{\em 
+\hypertarget{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27a38253c74a285d04166dcc555cb4c8f19}{M\+I\+N}\label{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27a38253c74a285d04166dcc555cb4c8f19}
+}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}
+26 \{\hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27af40ccc5dc19d4acb72467707512926c6}{MAX},\hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27a38253c74a285d04166dcc555cb4c8f19}{MIN}\};
+\end{DoxyCode}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\hypertarget{classHEAP_a341e0d88f79b41d55f804b759646d13c}{\index{H\+E\+A\+P@{H\+E\+A\+P}!H\+E\+A\+P@{H\+E\+A\+P}}
+\index{H\+E\+A\+P@{H\+E\+A\+P}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{H\+E\+A\+P}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E $>$ {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::{\bf H\+E\+A\+P} (
+\begin{DoxyParamCaption}
+\item[{int}]{a\+\_\+size, }
+\item[{{\bf heap\+Type}}]{ht}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a341e0d88f79b41d55f804b759646d13c}
+
+
+This is a constructor which build a heap tree of size a\+\_\+size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+\_\+size} & declares the size of the heap tree and which type of heap tree it will become \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+117 \{
+118     t = ht;
+119     \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes} = 0;
+120     \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf} = \textcolor{keyword}{new} SOMETYPE[a\_size+1]; \textcolor{comment}{// +1 because buf[0] is not used}
+121     \textcolor{keywordflow}{if} (\hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}) \hyperlink{classHEAP_a660f8fd84a9646a631badb8c6ca87aca}{size} = a\_size;
+122     \textcolor{keywordflow}{else} \hyperlink{classHEAP_a660f8fd84a9646a631badb8c6ca87aca}{size} = 0;
+123 \}
+\end{DoxyCode}
+\hypertarget{classHEAP_a7a99ff54ff586bbee33e36828bb7a2f7}{\index{H\+E\+A\+P@{H\+E\+A\+P}!````~H\+E\+A\+P@{$\sim$\+H\+E\+A\+P}}
+\index{````~H\+E\+A\+P@{$\sim$\+H\+E\+A\+P}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{$\sim$\+H\+E\+A\+P}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E $>$ {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::$\sim${\bf H\+E\+A\+P} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a7a99ff54ff586bbee33e36828bb7a2f7}
+
+
+This is a destructor to destroy the heap trees. 
+
+
+\begin{DoxyCode}
+134 \{
+135     \textcolor{keyword}{delete} [] \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf};
+136 \}
+\end{DoxyCode}
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classHEAP_a935705273d6321f27ff5e73f6a86f220}{\index{H\+E\+A\+P@{H\+E\+A\+P}!add\+Max\+H\+V@{add\+Max\+H\+V}}
+\index{add\+Max\+H\+V@{add\+Max\+H\+V}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{add\+Max\+H\+V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ void {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::add\+Max\+H\+V (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a935705273d6321f27ff5e73f6a86f220}
+\hypertarget{classHEAP_a60ee205bf01ba40b2de104f9058e612f}{\index{H\+E\+A\+P@{H\+E\+A\+P}!display\+Vector@{display\+Vector}}
+\index{display\+Vector@{display\+Vector}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{display\+Vector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ void {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::display\+Vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a60ee205bf01ba40b2de104f9058e612f}
+\hypertarget{classHEAP_a61daf2c080cdb92947a0e591fbd8d772}{\index{H\+E\+A\+P@{H\+E\+A\+P}!Insert@{Insert}}
+\index{Insert@{Insert}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ {\bf S\+T\+A\+T\+U\+S} {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::Insert (
+\begin{DoxyParamCaption}
+\item[{S\+O\+M\+E\+T\+Y\+P\+E}]{x}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a61daf2c080cdb92947a0e591fbd8d772}
+
+
+This is a insert function to add data into the heap trees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sometype} & which is basically an int of x \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns O\+K 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+150 \{
+151     \textcolor{keywordflow}{if} (\hyperlink{classHEAP_ac2560a1c0edc4cecc583880fe6006a91}{IsFull}()) \textcolor{keywordflow}{return} \hyperlink{HEAP_8H_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+152 
+153     \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}++;  \textcolor{comment}{// The last node of the heap is now vacant.}
+154 
+155     \textcolor{comment}{// Starting from the (vacant) last node, go from node i to}
+156     \textcolor{comment}{//   its parent iParent and, }
+157     
+158     \textcolor{comment}{// if it is a max heap then as long as the parent is smaller }
+159     \textcolor{comment}{//  than x, move the parent down:}
+160     \textcolor{comment}{// if it is a min heap then as long as the parent is }
+161     \textcolor{comment}{//  larger than x, move the x up:}
+162 
+163     \textcolor{keywordtype}{int} i = \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes};
+164     \textcolor{keywordtype}{int} iParent;
+165     \textcolor{keywordflow}{while} (i > 1) \{
+166         iParent = i/2;
+167         
+168         \textcolor{keywordflow}{if}(t == \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27af40ccc5dc19d4acb72467707512926c6}{MAX})
+169         \{
+170             \textcolor{keywordflow}{if} (x <= \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[iParent]) \textcolor{keywordflow}{break};
+171         \}
+172         \textcolor{keywordflow}{else} \textcolor{comment}{// must be MIN}
+173         \{
+174             \textcolor{keywordflow}{if}( x >= \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[iParent]) \textcolor{keywordflow}{break};
+175         \}
+176         \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] = \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[iParent];
+177         i = iParent;
+178     \}
+179 
+180     \textcolor{comment}{// Insert x into the created vacancy:}
+181     \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] = x;
+182 
+183     \textcolor{keywordflow}{return} \hyperlink{HEAP_8H_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+184 \}
+\end{DoxyCode}
+\hypertarget{classHEAP_a560500cc8aa1dc1d07dbc4e6c4d1b5f3}{\index{H\+E\+A\+P@{H\+E\+A\+P}!Is\+Empty@{Is\+Empty}}
+\index{Is\+Empty@{Is\+Empty}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{Is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ bool {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::Is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classHEAP_a560500cc8aa1dc1d07dbc4e6c4d1b5f3}
+
+\begin{DoxyCode}
+45 \{\textcolor{keywordflow}{return} (\hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes} == 0);\}
+\end{DoxyCode}
+\hypertarget{classHEAP_ac2560a1c0edc4cecc583880fe6006a91}{\index{H\+E\+A\+P@{H\+E\+A\+P}!Is\+Full@{Is\+Full}}
+\index{Is\+Full@{Is\+Full}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{Is\+Full}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ bool {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::Is\+Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classHEAP_ac2560a1c0edc4cecc583880fe6006a91}
+
+\begin{DoxyCode}
+46 \{\textcolor{keywordflow}{return} (\hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes} == \hyperlink{classHEAP_a660f8fd84a9646a631badb8c6ca87aca}{size});\}
+\end{DoxyCode}
+\hypertarget{classHEAP_a07fcd2f8486f24a64f216a7c2bfdbf77}{\index{H\+E\+A\+P@{H\+E\+A\+P}!print\+Heap@{print\+Heap}}
+\index{print\+Heap@{print\+Heap}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{print\+Heap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E $>$ void {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::print\+Heap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a07fcd2f8486f24a64f216a7c2bfdbf77}
+
+
+This is a function that prints out the heap tree. 
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}; i++)
+66         std::cout << \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] << std::endl;
+67 \}
+\end{DoxyCode}
+\hypertarget{classHEAP_a49697dff68d8383e2aec0cd757fd4201}{\index{H\+E\+A\+P@{H\+E\+A\+P}!push\+Max\+Heap\+Data@{push\+Max\+Heap\+Data}}
+\index{push\+Max\+Heap\+Data@{push\+Max\+Heap\+Data}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{push\+Max\+Heap\+Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E $>$ void {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::push\+Max\+Heap\+Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a49697dff68d8383e2aec0cd757fd4201}
+
+
+This is a push function that pushes information from max\+Heap into a vector. 
+
+
+\begin{DoxyCode}
+103 \{
+104     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}; i++)
+105         \hyperlink{classHEAP_a33776b33a838c2116349c676ac2a7249}{maxHV}.push\_back(\hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i]);
+106 \}
+\end{DoxyCode}
+\hypertarget{classHEAP_aedf7ac5c115a4d0bb96139da8788f26a}{\index{H\+E\+A\+P@{H\+E\+A\+P}!Remove@{Remove}}
+\index{Remove@{Remove}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ {\bf S\+T\+A\+T\+U\+S} {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::Remove (
+\begin{DoxyParamCaption}
+\item[{S\+O\+M\+E\+T\+Y\+P\+E \&}]{x}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_aedf7ac5c115a4d0bb96139da8788f26a}
+
+
+This is a remove function to remove data from the heap trees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sometype} & which is basically an int reference of x \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns O\+K 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+199 \{
+200     \textcolor{keywordflow}{if} (\hyperlink{classHEAP_a560500cc8aa1dc1d07dbc4e6c4d1b5f3}{IsEmpty}()) \textcolor{keywordflow}{return} \hyperlink{HEAP_8H_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+201 
+202     \textcolor{comment}{// Retrieve the top element:}
+203 
+204     x = \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[1];             
+205 
+206     \textcolor{comment}{// Starting from the vacant root, go from node iParent to its}
+207     \textcolor{comment}{//   larger child i and, as long as that child}
+208     \textcolor{comment}{//   is greater than the last element of the heap,}
+209     \textcolor{comment}{//   move that child up:}
+210 
+211     \textcolor{keywordtype}{int} iParent = 1;       \textcolor{comment}{// root}
+212     \textcolor{keywordtype}{int} i = 2;             \textcolor{comment}{// its left child}
+213     \textcolor{keywordflow}{while} (i <= \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}) \{
+214         \textcolor{comment}{// Set i to the right child, i+1, if it}
+215         \textcolor{comment}{//   exists and is larger:}
+216         \textcolor{keywordflow}{if} (i < \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes} && \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] < \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i+1]) i++;
+217         \textcolor{keywordflow}{if} (t == \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27a38253c74a285d04166dcc555cb4c8f19}{MIN})
+218             \textcolor{keywordflow}{if}(i < \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes} && \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] > \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i+1]) i++;
+219         \textcolor{keywordflow}{if} (t == \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27af40ccc5dc19d4acb72467707512926c6}{MAX})
+220             \textcolor{keywordflow}{if}(i < \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes} && \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] < \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i+1]) i++;
+221         \textcolor{comment}{// Compare with the last node:}
+222         \textcolor{keywordflow}{if} (t == \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27af40ccc5dc19d4acb72467707512926c6}{MAX} && \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] <= \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[\hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}]) \textcolor{keywordflow}{break};
+223         \textcolor{keywordflow}{if} (t == \hyperlink{classHEAP_a440ecc6b7771102dbaa63b3dacce6c27a38253c74a285d04166dcc555cb4c8f19}{MIN} && \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i] >= \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[nNodes]) \textcolor{keywordflow}{break};
+224         \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[iParent] = \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i];   \textcolor{comment}{// Move the child up; }
+225         iParent = i;             \textcolor{comment}{// buf[iParent] is now vacant.}
+226         i *= 2;                  \textcolor{comment}{// i is set to its left child}
+227     \}
+228 
+229     \textcolor{comment}{// Move the last element into the created vacancy:}
+230     \textcolor{keywordflow}{if} (nNodes > 1) \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[iParent] = \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[\hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}];
+231     nNodes--;
+232  
+233     \textcolor{keywordflow}{return} \hyperlink{HEAP_8H_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+234 \}
+\end{DoxyCode}
+\hypertarget{classHEAP_a3c1097a2a0b425a08a8da33c2c35edf7}{\index{H\+E\+A\+P@{H\+E\+A\+P}!temp\+Max\+Heap@{temp\+Max\+Heap}}
+\index{temp\+Max\+Heap@{temp\+Max\+Heap}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{temp\+Max\+Heap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E $>$ void {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::temp\+Max\+Heap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a3c1097a2a0b425a08a8da33c2c35edf7}
+
+
+This is a funcction that adds the information from max\+Heap into a temp vector. 
+
+
+\begin{DoxyCode}
+83 \{
+84     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}; i++)
+85         \hyperlink{classHEAP_a82daf731595f82a6224fc9360b63a58d}{tempMaxV} = \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i];
+86 \}
+\end{DoxyCode}
+\hypertarget{classHEAP_a5985dc9dbed06ce7aa3899b40ab80134}{\index{H\+E\+A\+P@{H\+E\+A\+P}!temp\+Min\+Heap@{temp\+Min\+Heap}}
+\index{temp\+Min\+Heap@{temp\+Min\+Heap}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{temp\+Min\+Heap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E $>$ void {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::temp\+Min\+Heap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classHEAP_a5985dc9dbed06ce7aa3899b40ab80134}
+
+
+This is a function that adds the information from min\+Heap into a temp vector. 
+
+
+\begin{DoxyCode}
+73 \{
+74     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 1; i < \hyperlink{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{nNodes}; i++)
+75         \hyperlink{classHEAP_a0402f157889d6b40f219c608bc9a3503}{tempMinV} = \hyperlink{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{buf}[i];
+76 \}
+\end{DoxyCode}
+
+
+\subsubsection{Member Data Documentation}
+\hypertarget{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}{\index{H\+E\+A\+P@{H\+E\+A\+P}!buf@{buf}}
+\index{buf@{buf}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{buf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ S\+O\+M\+E\+T\+Y\+P\+E$\ast$ {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::buf}}\label{classHEAP_abe5af2e4e8f2bc55e5b2e70ffa43e630}
+\hypertarget{classHEAP_af6c485575f29a80d91f611af87b7f6b8}{\index{H\+E\+A\+P@{H\+E\+A\+P}!index\+Max\+H\+V@{index\+Max\+H\+V}}
+\index{index\+Max\+H\+V@{index\+Max\+H\+V}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{index\+Max\+H\+V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ std\+::vector$<$int$>$ {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::index\+Max\+H\+V}}\label{classHEAP_af6c485575f29a80d91f611af87b7f6b8}
+\hypertarget{classHEAP_adc22726c34c72025819274f63d8bb418}{\index{H\+E\+A\+P@{H\+E\+A\+P}!index\+Min\+H\+V@{index\+Min\+H\+V}}
+\index{index\+Min\+H\+V@{index\+Min\+H\+V}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{index\+Min\+H\+V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ std\+::vector$<$int$>$ {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::index\+Min\+H\+V}}\label{classHEAP_adc22726c34c72025819274f63d8bb418}
+\hypertarget{classHEAP_a33776b33a838c2116349c676ac2a7249}{\index{H\+E\+A\+P@{H\+E\+A\+P}!max\+H\+V@{max\+H\+V}}
+\index{max\+H\+V@{max\+H\+V}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{max\+H\+V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ std\+::vector$<$int$>$ {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::max\+H\+V}}\label{classHEAP_a33776b33a838c2116349c676ac2a7249}
+\hypertarget{classHEAP_a541eab0dba5cd90e27be6083b1a1979f}{\index{H\+E\+A\+P@{H\+E\+A\+P}!min\+H\+V@{min\+H\+V}}
+\index{min\+H\+V@{min\+H\+V}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{min\+H\+V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ std\+::vector$<$int$>$ {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::min\+H\+V}}\label{classHEAP_a541eab0dba5cd90e27be6083b1a1979f}
+\hypertarget{classHEAP_ad481b16366a0a0ff65418afc71d9e652}{\index{H\+E\+A\+P@{H\+E\+A\+P}!n\+Nodes@{n\+Nodes}}
+\index{n\+Nodes@{n\+Nodes}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{n\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ int {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::n\+Nodes}}\label{classHEAP_ad481b16366a0a0ff65418afc71d9e652}
+\hypertarget{classHEAP_a660f8fd84a9646a631badb8c6ca87aca}{\index{H\+E\+A\+P@{H\+E\+A\+P}!size@{size}}
+\index{size@{size}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ int {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::size}}\label{classHEAP_a660f8fd84a9646a631badb8c6ca87aca}
+\hypertarget{classHEAP_a82daf731595f82a6224fc9360b63a58d}{\index{H\+E\+A\+P@{H\+E\+A\+P}!temp\+Max\+V@{temp\+Max\+V}}
+\index{temp\+Max\+V@{temp\+Max\+V}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{temp\+Max\+V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ int {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::temp\+Max\+V}}\label{classHEAP_a82daf731595f82a6224fc9360b63a58d}
+\hypertarget{classHEAP_a0402f157889d6b40f219c608bc9a3503}{\index{H\+E\+A\+P@{H\+E\+A\+P}!temp\+Min\+V@{temp\+Min\+V}}
+\index{temp\+Min\+V@{temp\+Min\+V}!H\+E\+A\+P@{H\+E\+A\+P}}
+\paragraph[{temp\+Min\+V}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class S\+O\+M\+E\+T\+Y\+P\+E$>$ int {\bf H\+E\+A\+P}$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$\+::temp\+Min\+V}}\label{classHEAP_a0402f157889d6b40f219c608bc9a3503}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{HEAP_8H}{H\+E\+A\+P.\+H}\end{DoxyCompactItemize}

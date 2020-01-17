@@ -1,0 +1,53 @@
+\hypertarget{timer_8cpp}{\subsection{timer.\+cpp File Reference}
+\label{timer_8cpp}\index{timer.\+cpp@{timer.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for timer.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}{timer} (void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}{\index{timer.\+cpp@{timer.\+cpp}!timer@{timer}}
+\index{timer@{timer}!timer.\+cpp@{timer.\+cpp}}
+\paragraph[{timer}]{\setlength{\rightskip}{0pt plus 5cm}void timer (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}
+
+\begin{DoxyCode}
+3 \{
+4     \textcolor{comment}{//std::cout << "1 sec" << std::endl;}
+5     \textcolor{keyword}{static} \textcolor{keywordtype}{int} s= 0; \textcolor{keyword}{static} \textcolor{keywordtype}{int} m = 0;
+6     std::ostringstream oss; \textcolor{comment}{// don't discard the memory. }
+7                                               \textcolor{comment}{// keep it so we can update t to the window}
+8     s++;    \textcolor{keywordflow}{if}(s == 59) \{s = 0; m++; \}
+9     oss << std::setfill(\textcolor{charliteral}{'0'});
+10     oss << std::setw(2) << m << \textcolor{stringliteral}{":"} << std::setw(2) << s;
+11     \textcolor{comment}{//oss << s;}
+12     \hyperlink{lab_8h_a05c7f6e86cca5f4d0ebf44d1f5042c37}{watch}->value(oss.str().c\_str());
+13     
+14     \textcolor{comment}{// Here we could check if the Q's have pizza and drivers}
+15     \textcolor{comment}{// ready for delivery every 10 seconds so we can see order}
+16     \textcolor{comment}{// in Q     if (s % 10 == 0)}
+17     \textcolor{keyword}{static} std::string str;
+18     std::string pizzas[] = \{\textcolor{stringliteral}{"veggie"},\textcolor{stringliteral}{"pepperoni"},\textcolor{stringliteral}{"sausage"},\textcolor{stringliteral}{"hawaiian"}\};
+19     \textcolor{keywordflow}{if}(s % 10 == 0)
+20     \{
+21         str += pizzas[s%4] += \textcolor{stringliteral}{"\(\backslash\)n"};
+22         \hyperlink{lab_8h_aea2b8efadc87a819fe57c311d668e504}{buff}->text(str.c\_str());
+23     \}
+24     
+25     Fl::repeat\_timeout(1,\hyperlink{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}{timer});
+26 \}
+\end{DoxyCode}

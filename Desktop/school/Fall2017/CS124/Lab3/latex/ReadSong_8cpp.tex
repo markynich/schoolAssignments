@@ -1,0 +1,51 @@
+\hypertarget{ReadSong_8cpp}{\subsection{Read\+Song.\+cpp File Reference}
+\label{ReadSong_8cpp}\index{Read\+Song.\+cpp@{Read\+Song.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab3.\+h\char`\"{}}\\*
+Include dependency graph for Read\+Song.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{ReadSong_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ReadSong_8cpp_a465df42ae82d3c7db8516dc9d321450e}{read\+Song} (std\+::ifstream \&f, \hyperlink{structMUSICELMT}{M\+U\+S\+I\+C\+E\+L\+M\+T} music\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{ReadSong_8cpp_a465df42ae82d3c7db8516dc9d321450e}{\index{Read\+Song.\+cpp@{Read\+Song.\+cpp}!read\+Song@{read\+Song}}
+\index{read\+Song@{read\+Song}!Read\+Song.\+cpp@{Read\+Song.\+cpp}}
+\paragraph[{read\+Song}]{\setlength{\rightskip}{0pt plus 5cm}void read\+Song (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{f, }
+\item[{{\bf M\+U\+S\+I\+C\+E\+L\+M\+T}}]{music\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{ReadSong_8cpp_a465df42ae82d3c7db8516dc9d321450e}
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordtype}{int} i = 0; \textcolor{keywordtype}{char} type;
+7     \textcolor{keywordflow}{while}(f >> type)
+8     \{
+9         \textcolor{comment}{//type = music[i].type;}
+10         \textcolor{keywordflow}{if} (type == \textcolor{charliteral}{'n'})
+11             \{
+12             f >> music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_ae03dbb1306465fe61ec10da05fa5782e}{tone} >> music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_a258adf07267f95ab9630b33bad1b2fe2}{duration};
+13             music[i].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type} = \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}{PLAYNOTE};
+14             \}
+15         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{charliteral}{'f'})
+16             \{
+17             f >> music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a9a2c77dc5f1c259a9a063f8e6ae18724}{start} >> music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.
+      \hyperlink{structFRAGMENT_a3edee1f345e206cdc220b16d7d290018}{finish};
+18             music[i].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type} = \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}{PLAYFRAGMENT};
+19             \}
+20         i++;
+21     \}
+22     music[i].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type} = \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}{PLAYSTOP};
+23 \}
+\end{DoxyCode}

@@ -1,0 +1,51 @@
+\hypertarget{loadFile_8cpp}{\subsection{load\+File.\+cpp File Reference}
+\label{loadFile_8cpp}\index{load\+File.\+cpp@{load\+File.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}Stock.\+h\char`\"{}}\\*
+Include dependency graph for load\+File.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{loadFile_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{loadFile_8cpp_aa059384bbb4de4156d602a4293d88ef4}{load\+File} (std\+::string f, std\+::vector$<$ double $>$ \&v)
+\begin{DoxyCompactList}\small\item\em This is a function that loads a text file with information of the heap trees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{loadFile_8cpp_aa059384bbb4de4156d602a4293d88ef4}{\index{load\+File.\+cpp@{load\+File.\+cpp}!load\+File@{load\+File}}
+\index{load\+File@{load\+File}!load\+File.\+cpp@{load\+File.\+cpp}}
+\paragraph[{load\+File}]{\setlength{\rightskip}{0pt plus 5cm}void load\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f, }
+\item[{std\+::vector$<$ double $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{loadFile_8cpp_aa059384bbb4de4156d602a4293d88ef4}
+
+
+This is a function that loads a text file with information of the heap trees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & to write in the file and a vector to reference the info that will be loaded from the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return information 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+3                                                  \{
+4     std::ifstream ifs(f);
+5     \textcolor{keywordtype}{double} x;
+6     \textcolor{keywordflow}{while}(ifs >> x) \{
+7         \textcolor{comment}{//std::cout << "From file: " << x << std::endl;}
+8         v.push\_back(x);
+9     \}
+10     ifs.close();
+11 \}
+\end{DoxyCode}

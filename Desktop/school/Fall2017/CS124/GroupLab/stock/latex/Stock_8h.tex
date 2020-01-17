@@ -1,0 +1,94 @@
+\hypertarget{Stock_8h}{\subsection{Stock.\+h File Reference}
+\label{Stock_8h}\index{Stock.\+h@{Stock.\+h}}
+}
+{\ttfamily \#include \char`\"{}H\+E\+A\+P.\+H\char`\"{}}\\*
+Include dependency graph for Stock.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Stock_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{Stock_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classStock}{Stock}
+\begin{DoxyCompactList}\small\item\em This is a class \hyperlink{classStock}{Stock} that creates min\+Heap and max\+Heap which are able to be called throughout the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Stock_8h_aa059384bbb4de4156d602a4293d88ef4}{load\+File} (std\+::string f, std\+::vector$<$ double $>$ \&v)
+\begin{DoxyCompactList}\small\item\em This is a function that loads a text file with information of the heap trees. \end{DoxyCompactList}\item 
+void \hyperlink{Stock_8h_ad613df1d9cfb29d70e453c5bdec4a9b8}{save\+File} (std\+::string f, std\+::vector$<$ double $>$ \&v)
+\begin{DoxyCompactList}\small\item\em This is a function that saves into a text file with the user's information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{Stock_8h_aa059384bbb4de4156d602a4293d88ef4}{\index{Stock.\+h@{Stock.\+h}!load\+File@{load\+File}}
+\index{load\+File@{load\+File}!Stock.\+h@{Stock.\+h}}
+\paragraph[{load\+File}]{\setlength{\rightskip}{0pt plus 5cm}void load\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f, }
+\item[{std\+::vector$<$ double $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Stock_8h_aa059384bbb4de4156d602a4293d88ef4}
+
+
+This is a function that loads a text file with information of the heap trees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & to write in the file and a vector to reference the info that will be loaded from the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return information 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+3                                                  \{
+4     std::ifstream ifs(f);
+5     \textcolor{keywordtype}{double} x;
+6     \textcolor{keywordflow}{while}(ifs >> x) \{
+7         \textcolor{comment}{//std::cout << "From file: " << x << std::endl;}
+8         v.push\_back(x);
+9     \}
+10     ifs.close();
+11 \}
+\end{DoxyCode}
+\hypertarget{Stock_8h_ad613df1d9cfb29d70e453c5bdec4a9b8}{\index{Stock.\+h@{Stock.\+h}!save\+File@{save\+File}}
+\index{save\+File@{save\+File}!Stock.\+h@{Stock.\+h}}
+\paragraph[{save\+File}]{\setlength{\rightskip}{0pt plus 5cm}void save\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f, }
+\item[{std\+::vector$<$ double $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{Stock_8h_ad613df1d9cfb29d70e453c5bdec4a9b8}
+
+
+This is a function that saves into a text file with the user's information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & to write in the file and a vector to reference the info that will be saved into the file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+3                                                  \{
+4     std::ofstream ofs;
+5     ofs.open(f);
+6     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < v.size(); i++) \{
+7         \textcolor{comment}{//std::cout << "Save File: " << v[i] << std::endl;}
+8         ofs << v[i];
+9     \}
+10     ofs.close();
+11 \}
+\end{DoxyCode}

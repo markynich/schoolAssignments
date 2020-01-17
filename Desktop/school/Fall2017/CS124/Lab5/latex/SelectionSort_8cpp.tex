@@ -1,0 +1,43 @@
+\hypertarget{SelectionSort_8cpp}{\subsection{Selection\+Sort.\+cpp File Reference}
+\label{SelectionSort_8cpp}\index{Selection\+Sort.\+cpp@{Selection\+Sort.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for Selection\+Sort.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{SelectionSort_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{SelectionSort_8cpp_ae3f73c131abb854e875e35a12a50099c}{Selection\+Sort} (\hyperlink{structAQIData}{A\+Q\+I\+Data} a\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{SelectionSort_8cpp_ae3f73c131abb854e875e35a12a50099c}{\index{Selection\+Sort.\+cpp@{Selection\+Sort.\+cpp}!Selection\+Sort@{Selection\+Sort}}
+\index{Selection\+Sort@{Selection\+Sort}!Selection\+Sort.\+cpp@{Selection\+Sort.\+cpp}}
+\paragraph[{Selection\+Sort}]{\setlength{\rightskip}{0pt plus 5cm}void Selection\+Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data}}]{a\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{SelectionSort_8cpp_ae3f73c131abb854e875e35a12a50099c}
+
+\begin{DoxyCode}
+3 \{
+4      \textcolor{keywordtype}{int} i, iMax;
+5      \textcolor{keywordflow}{while} (n > 1)
+6       \{
+7      \textcolor{comment}{// Find the largest element:}
+8      \textcolor{keywordflow}{for} (iMax = 0, i = 1; i < n; i++)
+9      \textcolor{keywordflow}{if} (a[i] > a[iMax]) iMax = i;
+10      \textcolor{comment}{// Swap it with the last element:}
+11      \hyperlink{lab_8h_ab6d7658ea8e93ba15766ce5d1a9e7511}{Swap}(a[iMax], a[n-1]);
+12      n--;
+13       \}
+14 \}
+\end{DoxyCode}

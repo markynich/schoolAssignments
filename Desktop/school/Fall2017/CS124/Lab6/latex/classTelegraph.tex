@@ -1,0 +1,166 @@
+\hypertarget{classTelegraph}{\subsection{Telegraph Class Reference}
+\label{classTelegraph}\index{Telegraph@{Telegraph}}
+}
+
+
+{\ttfamily \#include $<$morse.\+h$>$}
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTelegraph_a73c4f9c8862ba581ec5eac6530bf6352}{Encode} (char text\mbox{[}$\,$\mbox{]}, char morse\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{classTelegraph_a09985235f674760465da3bbd9e136d12}{Decode} (char morse\mbox{[}$\,$\mbox{]}, char text\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classTelegraph_a2ace7d6ba4d3742dbcc57d6a36a13b54}{open} ()
+\begin{DoxyCompactList}\small\item\em open creates the morse code table \end{DoxyCompactList}\item 
+static void \hyperlink{classTelegraph_a4b7e7f129e6aedc1c3f9b354806f265e}{close} ()
+\item 
+static void \hyperlink{classTelegraph_ae7f12363fff79578576b345c9d8cb8fb}{destroy\+Tree} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classTelegraph_a4b7e7f129e6aedc1c3f9b354806f265e}{\index{Telegraph@{Telegraph}!close@{close}}
+\index{close@{close}!Telegraph@{Telegraph}}
+\paragraph[{close}]{\setlength{\rightskip}{0pt plus 5cm}void Telegraph\+::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTelegraph_a4b7e7f129e6aedc1c3f9b354806f265e}
+
+\begin{DoxyCode}
+68 \{
+69     \hyperlink{classTelegraph_ae7f12363fff79578576b345c9d8cb8fb}{destroyTree}(root);
+70     root = 0;
+71 \}
+\end{DoxyCode}
+\hypertarget{classTelegraph_a09985235f674760465da3bbd9e136d12}{\index{Telegraph@{Telegraph}!Decode@{Decode}}
+\index{Decode@{Decode}!Telegraph@{Telegraph}}
+\paragraph[{Decode}]{\setlength{\rightskip}{0pt plus 5cm}void Telegraph\+::\+Decode (
+\begin{DoxyParamCaption}
+\item[{char}]{morse\mbox{[}$\,$\mbox{]}, }
+\item[{char}]{text\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classTelegraph_a09985235f674760465da3bbd9e136d12}
+
+\begin{DoxyCode}
+101 \{
+102      \textcolor{keywordtype}{char} *dd;
+103      \hyperlink{structTNODE}{TNODE} *node;
+104      node = root;
+105      \textcolor{comment}{//char *t;}
+106      \textcolor{comment}{// For each char in the encoded message (can be}
+107      \textcolor{comment}{// a dot, a dash, or a space):}
+108      \textcolor{keywordflow}{for} (dd = morse; *dd; dd++) \{
+109         \textcolor{keywordflow}{if}(*dd == \textcolor{charliteral}{'.'})
+110             node = node->\hyperlink{structTNODE_ac8548d0ee2d54b914e0e07ab35375dba}{left};
+111         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*dd == \textcolor{charliteral}{'-'})
+112             node = node->\hyperlink{structTNODE_a4e135d9137519b2a4b89dbccb55ae967}{right}; 
+113         \textcolor{keywordflow}{else} \{
+114             *text++ = node->\hyperlink{structTNODE_a436db20d992c4227b8482603b4f76712}{symbol}; 
+115             node = root;
+116         \}
+117      \}
+118      *text = \textcolor{charliteral}{'\(\backslash\)0'};
+119 \}
+\end{DoxyCode}
+\hypertarget{classTelegraph_ae7f12363fff79578576b345c9d8cb8fb}{\index{Telegraph@{Telegraph}!destroy\+Tree@{destroy\+Tree}}
+\index{destroy\+Tree@{destroy\+Tree}!Telegraph@{Telegraph}}
+\paragraph[{destroy\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}static void Telegraph\+::destroy\+Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTelegraph_ae7f12363fff79578576b345c9d8cb8fb}
+\hypertarget{classTelegraph_a73c4f9c8862ba581ec5eac6530bf6352}{\index{Telegraph@{Telegraph}!Encode@{Encode}}
+\index{Encode@{Encode}!Telegraph@{Telegraph}}
+\paragraph[{Encode}]{\setlength{\rightskip}{0pt plus 5cm}void Telegraph\+::\+Encode (
+\begin{DoxyParamCaption}
+\item[{char}]{text\mbox{[}$\,$\mbox{]}, }
+\item[{char}]{morse\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{classTelegraph_a73c4f9c8862ba581ec5eac6530bf6352}
+
+\begin{DoxyCode}
+75 \{
+76      \textcolor{keywordtype}{int} i;
+77      \textcolor{keywordtype}{char} c, *t, *dd; \textcolor{comment}{// t points to text;}
+78      \textcolor{comment}{// dd points to a string of dots and dashes.}
+79      \textcolor{keywordflow}{for} (t = text; *t; t++) \{
+80          c = toupper(*t);
+81          \textcolor{comment}{// If space, add a space to the morse string:}
+82          \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{' '}) \{
+83              *morse++ = \textcolor{charliteral}{' '};
+84              \textcolor{keywordflow}{continue};
+85          \}
+86          \textcolor{comment}{// Find this symbol in the MORSECODE table;}
+87          \textcolor{comment}{// skip this symbol if not found:}
+88          \textcolor{keywordflow}{for} (i = 0; table[i].\hyperlink{structMorsecode_a8f7fb86f9de77dc705dc37730e83869b}{symbol}; i++)
+89             \textcolor{keywordflow}{if} (table[i].symbol == c) \textcolor{keywordflow}{break};
+90          \textcolor{keywordflow}{if} (!table[i].symbol) \textcolor{keywordflow}{continue};
+91          \textcolor{comment}{// Copy its code into the morse string:}
+92          dd = table[i].\hyperlink{structMorsecode_abb81632acf39b9e91f76bd09b12fc0e0}{code};
+93          \textcolor{keywordflow}{while} (*dd) *morse++ = *dd++;
+94          \textcolor{comment}{// Add one space to separate letters:}
+95          *morse++ = \textcolor{charliteral}{' '};
+96          \}
+97      *morse = \textcolor{charliteral}{'\(\backslash\)0'};
+98 \}
+\end{DoxyCode}
+\hypertarget{classTelegraph_a2ace7d6ba4d3742dbcc57d6a36a13b54}{\index{Telegraph@{Telegraph}!open@{open}}
+\index{open@{open}!Telegraph@{Telegraph}}
+\paragraph[{open}]{\setlength{\rightskip}{0pt plus 5cm}void Telegraph\+::open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classTelegraph_a2ace7d6ba4d3742dbcc57d6a36a13b54}
+
+
+open creates the morse code table 
+
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordtype}{char}* dd;
+24     Telegraph::root = \textcolor{keyword}{new} \hyperlink{structTNODE}{TNODE};
+25     \hyperlink{structTNODE}{TNODE}* node; \hyperlink{structTNODE}{TNODE}* nextnode;
+26     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0 ; i < N; i++)
+27     \{
+28         node = root;
+29         \textcolor{keywordflow}{for}(dd = table[i].code; *dd ; dd++)
+30         \{   \textcolor{comment}{// loops through each char of code}
+31             \textcolor{keywordflow}{if}(*dd == \textcolor{charliteral}{'.'})
+32             \{
+33                 nextnode = node->\hyperlink{structTNODE_ac8548d0ee2d54b914e0e07ab35375dba}{left};
+34                 \textcolor{keywordflow}{if}(not nextnode)
+35                 \{ 
+36                     nextnode = \textcolor{keyword}{new} \hyperlink{structTNODE}{TNODE};
+37                     node->\hyperlink{structTNODE_ac8548d0ee2d54b914e0e07ab35375dba}{left} = nextnode;
+38                 \}
+39             \}
+40             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(*dd == \textcolor{charliteral}{'-'})
+41             \{
+42                 nextnode = node->\hyperlink{structTNODE_a4e135d9137519b2a4b89dbccb55ae967}{right};
+43                 \textcolor{keywordflow}{if}(not nextnode)
+44                 \{ 
+45                     nextnode = \textcolor{keyword}{new} \hyperlink{structTNODE}{TNODE};
+46                     node->\hyperlink{structTNODE_a4e135d9137519b2a4b89dbccb55ae967}{right} = nextnode;
+47                 \}
+48             \}
+49             \textcolor{keywordflow}{else} std::cerr << \textcolor{stringliteral}{"unknown morse code"} << std::endl;
+50             node = nextnode;
+51         \}   \textcolor{comment}{// not dash, not dot, therefore }
+52         \textcolor{comment}{// it must be null, so assign symbol}
+53         node->\hyperlink{structTNODE_a436db20d992c4227b8482603b4f76712}{symbol} = table[i].\hyperlink{structMorsecode_a8f7fb86f9de77dc705dc37730e83869b}{symbol};
+54     \}
+55 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{morse_8h}{morse.\+h}\item 
+\hyperlink{morse_8cpp}{morse.\+cpp}\end{DoxyCompactItemize}

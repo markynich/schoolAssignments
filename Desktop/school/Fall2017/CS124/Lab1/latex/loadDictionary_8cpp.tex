@@ -1,0 +1,51 @@
+\hypertarget{loadDictionary_8cpp}{\subsection{load\+Dictionary.\+cpp File Reference}
+\label{loadDictionary_8cpp}\index{load\+Dictionary.\+cpp@{load\+Dictionary.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for load\+Dictionary.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{loadDictionary_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{loadDictionary_8cpp_a14d9a1d2cb42104c2d9cf01571b162a7}{load\+Dictionary} (string file\+Name, vector$<$ \hyperlink{structENTRY}{E\+N\+T\+R\+Y} $>$ \&dict)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{loadDictionary_8cpp_a14d9a1d2cb42104c2d9cf01571b162a7}{\index{load\+Dictionary.\+cpp@{load\+Dictionary.\+cpp}!load\+Dictionary@{load\+Dictionary}}
+\index{load\+Dictionary@{load\+Dictionary}!load\+Dictionary.\+cpp@{load\+Dictionary.\+cpp}}
+\paragraph[{load\+Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}bool load\+Dictionary (
+\begin{DoxyParamCaption}
+\item[{string}]{file\+Name, }
+\item[{vector$<$ {\bf E\+N\+T\+R\+Y} $>$ \&}]{dict}
+\end{DoxyParamCaption}
+)}}\label{loadDictionary_8cpp_a14d9a1d2cb42104c2d9cf01571b162a7}
+
+\begin{DoxyCode}
+20 \{   \textcolor{comment}{//integer needed for counting how many words are in dictionary}
+21     \textcolor{keywordtype}{int} cnt = 0; 
+22     \hyperlink{structENTRY}{ENTRY} e; \textcolor{comment}{//to access the vector ENTRY which contain word and translation}
+23     ifstream inpFile(fileName.c\_str());
+24     \textcolor{keywordflow}{if} (!inpFile) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{//if file does not open, it will return false}
+25     \textcolor{keywordtype}{string} title; \textcolor{comment}{//string to contain title}
+26     getline(inpFile, title); \textcolor{comment}{//to get the title from the text file}
+27     cout << title << endl; \textcolor{comment}{//to print the title of the program}
+28     cout << \textcolor{stringliteral}{"....................................."} << endl;
+29     \textcolor{keywordflow}{while} (inpFile >> e.\hyperlink{structENTRY_a7dfcf0a0b27dc7cecf80565a615d6233}{word} >> e.\hyperlink{structENTRY_aeffa74a793268864bbbdf6a3645bf36a}{translation}) \{
+30         dict.push\_back(e);
+31         inpFile.ignore(80, \textcolor{charliteral}{'\(\backslash\)n'}); \textcolor{comment}{//skip the rest of the line}
+32         cnt++;
+33     \}\textcolor{comment}{//end of while for inpFile}
+34     
+35     cout << \textcolor{stringliteral}{" ("} << cnt << \textcolor{stringliteral}{" words)\(\backslash\)n\(\backslash\)n"}; \textcolor{comment}{//prints out the number of words}
+36     \textcolor{comment}{//prints out the number of vectors used}
+37     cout << \textcolor{stringliteral}{" ("} << dict.size() << \textcolor{stringliteral}{" size of vector)\(\backslash\)n\(\backslash\)n"};
+38     
+39     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+40 \} \textcolor{comment}{//end of bool loadDictionary}
+\end{DoxyCode}

@@ -1,0 +1,273 @@
+
+\begin{DoxyVerbInclude}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>cs124 Stockz Lab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript">
+  function newData() {
+  var dataTable = document.getElementById("dataTable");
+  var r = dataTable.insertRow(0);
+  var c1 = dataTable.insertRow(0);
+
+  var inputValue = document.getElementById("Stock");
+  var strValue = inputValue.options[inputValue.selectedIndex].value;
+  
+  c1.innerHTML = "hello";
+}
+
+function CheckBrowser() {
+  if('localStorage' in window && window ['localStorage'] !== null) {
+    // we can use local storage
+    console.log('local storage works');
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+function getStocks(){
+  var stocks = new Array;
+  var stocks_str= localStorage.getItem('stock');
+  console.log(stocks_str);
+  if (stocks_str !== null) {
+    stocks = JSON.parse(stocks_str);
+  }
+  return stocks;
+}
+
+function getNames(){
+  var names = new Array;
+  var names_str= localStorage.getItem('name');
+  console.log(names_str);
+  if (names_str !== null) {
+    names = JSON.parse(names_str);
+  }
+  return names;
+}
+
+function getShares(){
+  var shares = new Array;
+  var shares_str= localStorage.getItem('shares');
+  console.log(shares_str);
+  if (shares_str !== null) {
+    shares = JSON.parse(shares_str);
+  }
+  return shares;
+}
+
+function getTypes(){
+  var types = new Array;
+  var types_str= localStorage.getItem('type');
+  console.log(types_str);
+  if (types_str !== null) {
+    types = JSON.parse(types_str);
+  }
+  return types;
+}
+
+function getPrices(){
+  var prices = new Array;
+  var prices_str= localStorage.getItem('price');
+  console.log(prices_str);
+  if (prices_str !== null) {
+    prices = JSON.parse(prices_str);
+  }
+  return prices;
+}
+
+function add() {
+  var stock = document.getElementById('Stock').value;
+
+  var stocks = getStocks();
+  stocks.push(stock);
+  localStorage.setItem('stock', JSON.stringify(stocks));
+
+  var name = document.getElementById('name').value;
+
+  var names = getNames();
+  names.push(name);
+  localStorage.setItem('name', JSON.stringify(names));
+
+  var share = document.getElementById('shares').value;
+
+  var shares = getShares();
+  var shareInt = parseInt(share);
+  share = shareInt;
+  shares.push(share);
+  localStorage.setItem('shares', JSON.stringify(shares));
+
+  var type = document.querySelector('input[name = "o"]:checked').value;
+
+  var types = getTypes();
+  types.push(type);
+  localStorage.setItem('type', JSON.stringify(types));
+
+  var price = document.getElementById('price').value;
+  var priceInt = parseInt(price);
+  price = priceInt;
+  var prices = getPrices();
+  prices.push(price);
+  localStorage.setItem('price', JSON.stringify(prices));
+
+  addData();
+  show();
+}
+
+function show() {
+  var stocks = getStocks();
+  var names = getNames();
+  var shares = getShares();
+  var types = getTypes();
+  var prices = getPrices();
+
+  /*
+  var html = "";
+  for ( var i = 0; i <= stocks.length - 1; i++) {
+    html += "<tr><td>" + stocks[i] + "</td><td>" + names[i] +
+        "</td><td>" + shares[i] + "</td><td>" + types[i] +
+        "</td><td>" + prices[i] + "</td></tr>";
+  }
+  document.getElementById('dataTable').innerHTML = html;
+  */
+  var table = document.getElementById("dataTable");
+
+  var rowIndex = 1;
+  for ( var i = 0; i <= stocks.length - 1; i++) {
+    var r = table.insertRow(rowIndex);
+    var c1 = r.insertCell(0);
+    var c2 = r.insertCell(1);
+    var c3 = r.insertCell(2);
+    var c4 = r.insertCell(3);
+    var c5 = r.insertCell(4);
+
+    c1.innerHTML = stocks[i];
+    c2.innerHTML = names[i];
+    c3.innerHTML = shares[i];
+    c4.innerHTML = types[i];
+    c5.innerHTML = prices[i];
+    rowIndex++;
+  }
+}
+
+var dpB = []; // data points Buys
+var dpS = []; // data points Sells
+
+function pushData() {
+  var types = getTypes();
+  var prices = getPrices();
+  var shares = getShares();
+  for ( var i = dpB.length; i < prices.length; i++ ) {
+    var sharesToInt = parseInt(shares[i]);
+    var pricesToInt = parseInt(prices[i]);
+    if (types[i] == "Buy") {
+      dpB.push({
+        x: sharesToInt,
+        y: pricesToInt
+      });
+    }
+    else if (types[i] == "Sell") {
+      dpS.push({
+        x: sharesToInt,
+        y: pricesToInt
+      });
+    }
+  }
+}
+
+function addData() {
+  pushData();
+  chart.options.data[0].dataPoints = dpB;
+  chart.options.data[1].dataPoints = dpS;
+  chart.render();
+}
+
+var chart;
+window.onload = function(){
+  CheckBrowser();
+  //localStorage.clear();
+  chart = new CanvasJS.Chart("chartContainer",
+    {
+      title:{
+      text: "Amazon"  
+      },
+      data: [
+      {        
+        type: "bar",
+        dataPoints: dpB
+      },
+      {        
+        type: "bar",
+        dataPoints: dpS
+      }]
+    });
+    chart.render();
+  show();
+  addData();
+}
+
+//addData();
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+<div class="home">
+  <ul class="nav">
+    <li><a href="">Home</a></li>
+    <li><a href="">Profile</a></li>
+    <li><a href="">Trades</a></li>
+    <li><a href="">Logout</a></li>
+  </ul>
+  <h1>Stockz</h1>
+  <hr>
+  <div class="stockTable-1">
+    <h1>EEEE-TRADE</h1>
+    <div class="menu">
+      <form name=ShoppingMenu action="/cgi-bin/stock">
+        <div>
+          <label>Choose Stock:</label>
+          <select id="Stock" name="Stock">
+            <option value="Amazon">Amazon</option>
+            <option value="Nvidia">Nvidia</option>
+            <option value="BitCoin">BitCoin</option>
+            <option value="Ohlone">Ohlone</option>
+            <option value="Ganja4Lyfe">Ganja4Lyfe</option>
+          </select>
+          </div>
+        <input type="radio" id="Buy" name="o" value="Buy">Buy
+        <input type="radio" id="Sell" name="o" value="Sell">Sell
+        <div>
+        <label>Name:</label><input type="text" id="name" name="n">
+          <div>
+            <label>Shares:</label><input type="text" id="shares" name="Z">
+          </div>
+          <div>
+            <label>Price:</label><input type="text" id="price" name="p"><input type="submit" value="Go" onclick="add()">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="stockTable">
+      <div id="chartContainer" style="height: 360px; width: 100%;"></div>
+    </div>
+  </div>
+<div class="stockTable">
+  <h1>Stock Request</h1>
+  <table id="dataTable">
+  <tr>
+    <th>Stock:</th>
+    <th>Name:</th>
+    <th>Shares:</th>
+    <th>Type:</th>
+    <th>Price:</th>
+  </tr>
+  </table>
+</div>
+</body>
+</html>
+\end{DoxyVerbInclude}
+ 

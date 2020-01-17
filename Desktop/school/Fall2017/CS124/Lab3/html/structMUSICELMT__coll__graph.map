@@ -1,0 +1,4 @@
+<map id="MUSICELMT" name="MUSICELMT">
+<area shape="rect" id="node2" href="$structNOTE.html" title="NOTE" alt="" coords="5,5,64,32"/>
+<area shape="rect" id="node3" href="$structFRAGMENT.html" title="FRAGMENT" alt="" coords="89,5,186,32"/>
+</map>

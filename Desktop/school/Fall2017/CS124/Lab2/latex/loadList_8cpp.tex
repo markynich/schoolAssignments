@@ -1,0 +1,49 @@
+\hypertarget{loadList_8cpp}{\subsection{load\+List.\+cpp File Reference}
+\label{loadList_8cpp}\index{load\+List.\+cpp@{load\+List.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab2.\+h\char`\"{}}\\*
+Include dependency graph for load\+List.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{loadList_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structNODE}{N\+O\+D\+E} $\ast$ \hyperlink{loadList_8cpp_a32d5af33259b5aaf9aa553c5d81049b0}{load\+List} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em This function loads the data from a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{loadList_8cpp_a32d5af33259b5aaf9aa553c5d81049b0}{\index{load\+List.\+cpp@{load\+List.\+cpp}!load\+List@{load\+List}}
+\index{load\+List@{load\+List}!load\+List.\+cpp@{load\+List.\+cpp}}
+\paragraph[{load\+List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\+O\+D\+E}$\ast$ load\+List (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{loadList_8cpp_a32d5af33259b5aaf9aa553c5d81049b0}
+
+
+This function loads the data from a file. 
+
+
+\begin{DoxyImage}
+\includegraphics{./lab2fig1}
+\caption{Linked List}
+\end{DoxyImage}
+loads the linked list into the program which lets the function Display\+List print it out for the user 
+\begin{DoxyCode}
+10 \{
+11     \hyperlink{structNODE}{NODE}* head = 0; \textcolor{comment}{//puts head to null}
+12     std::ifstream inputFile(filename.c\_str()); \textcolor{comment}{//taking input}
+13     std::string city; \textcolor{comment}{//to use string city for list}
+14     \textcolor{keywordflow}{while} (inputFile >> city) \textcolor{comment}{// loop to grab information}
+15         \textcolor{keywordflow}{if} (\hyperlink{Insert_8cpp_a8b4f4a4d9659ba3856a6272ef31d6e95}{Insert}(head, city) == \hyperlink{lab2_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED})
+16             std::cerr << \textcolor{stringliteral}{"Error on Insert\(\backslash\)n"};
+17         \textcolor{comment}{//if statements that catches error if it cannot}
+18         \textcolor{comment}{//get linked list information}
+19     \textcolor{keywordflow}{return} head; \textcolor{comment}{//returns head}
+20 \}
+\end{DoxyCode}

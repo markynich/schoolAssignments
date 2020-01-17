@@ -1,0 +1,55 @@
+\hypertarget{destroyList_8cpp}{\subsection{destroy\+List.\+cpp File Reference}
+\label{destroyList_8cpp}\index{destroy\+List.\+cpp@{destroy\+List.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab2.\+h\char`\"{}}\\*
+Include dependency graph for destroy\+List.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{destroyList_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{destroyList_8cpp_ae4c3d5a7f0c1b60f329a966c2e8e9cbd}{destroy\+List} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$head)
+\begin{DoxyCompactList}\small\item\em Destroys the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{destroyList_8cpp_ae4c3d5a7f0c1b60f329a966c2e8e9cbd}{\index{destroy\+List.\+cpp@{destroy\+List.\+cpp}!destroy\+List@{destroy\+List}}
+\index{destroy\+List@{destroy\+List}!destroy\+List.\+cpp@{destroy\+List.\+cpp}}
+\paragraph[{destroy\+List}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{destroyList_8cpp_ae4c3d5a7f0c1b60f329a966c2e8e9cbd}
+
+
+Destroys the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Name of the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer 'head; to the link list 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+4 \{
+5     std::cout <<  std::endl; \textcolor{comment}{//to space out lists}
+6     \hyperlink{structNODE}{NODE}* node; \textcolor{comment}{//creating node}
+7     \textcolor{keywordflow}{for}(node = head; node; node = node->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next}) \textcolor{comment}{//loop to delete list}
+8     \{       
+9             std::cout << \textcolor{stringliteral}{"Deleting: "}
+10             << node->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} << std::endl; \textcolor{comment}{// to tell user its deleted}
+11             \hyperlink{structNODE}{NODE}* tmp = head->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next}; \textcolor{comment}{//assigns head pointer to tmp}
+12             \textcolor{comment}{//delete head;}
+13             head = tmp; \textcolor{comment}{//head becomes tmp which is deleted}
+14 
+15     \}
+16     
+17 \}
+\end{DoxyCode}

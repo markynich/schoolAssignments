@@ -1,0 +1,48 @@
+\hypertarget{displayList_8cpp}{\subsection{display\+List.\+cpp File Reference}
+\label{displayList_8cpp}\index{display\+List.\+cpp@{display\+List.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab2.\+h\char`\"{}}\\*
+Include dependency graph for display\+List.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{displayList_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{display\+List} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$head)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}{\index{display\+List.\+cpp@{display\+List.\+cpp}!display\+List@{display\+List}}
+\index{display\+List@{display\+List}!display\+List.\+cpp@{display\+List.\+cpp}}
+\paragraph[{display\+List}]{\setlength{\rightskip}{0pt plus 5cm}void display\+List (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{displayList_8cpp_a6d585519d2e25e8317c4939753456dd1}
+This function display th link list 
+\begin{DoxyParams}{Parameters}
+{\em head} & is a pointer to beginning node of linklist \\
+\hline
+\end{DoxyParams}
+for Node equals head, and node equals node pointing to next, it will print out the city and will continue until it prints out all the list
+\begin{DoxyCode}
+4 \{   
+5     std::cout << \textcolor{stringliteral}{"\(\backslash\)nList: "} << std::endl; \textcolor{comment}{//tells user the list is built}
+6     \hyperlink{structNODE}{NODE}* node;
+7     \textcolor{keywordflow}{if}(head)
+12         \textcolor{keywordflow}{for}(\hyperlink{structNODE}{NODE}* node = head; node; node = node->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next})
+13         \{    
+14             std::cout << node->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} << std::endl;
+15         \}
+16         \textcolor{keywordflow}{else}
+17             std::cout << \textcolor{stringliteral}{"List is empty\(\backslash\)n"} << std::endl;
+18             \textcolor{comment}{// if there is nothing in the list, then it will}
+19             \textcolor{comment}{//print out this statement}
+20 
+21 \}
+\end{DoxyCode}

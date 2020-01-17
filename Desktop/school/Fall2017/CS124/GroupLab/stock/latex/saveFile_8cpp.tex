@@ -1,0 +1,48 @@
+\hypertarget{saveFile_8cpp}{\subsection{save\+File.\+cpp File Reference}
+\label{saveFile_8cpp}\index{save\+File.\+cpp@{save\+File.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}Stock.\+h\char`\"{}}\\*
+Include dependency graph for save\+File.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{saveFile_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{saveFile_8cpp_ad613df1d9cfb29d70e453c5bdec4a9b8}{save\+File} (std\+::string f, std\+::vector$<$ double $>$ \&v)
+\begin{DoxyCompactList}\small\item\em This is a function that saves into a text file with the user's information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{saveFile_8cpp_ad613df1d9cfb29d70e453c5bdec4a9b8}{\index{save\+File.\+cpp@{save\+File.\+cpp}!save\+File@{save\+File}}
+\index{save\+File@{save\+File}!save\+File.\+cpp@{save\+File.\+cpp}}
+\paragraph[{save\+File}]{\setlength{\rightskip}{0pt plus 5cm}void save\+File (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f, }
+\item[{std\+::vector$<$ double $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{saveFile_8cpp_ad613df1d9cfb29d70e453c5bdec4a9b8}
+
+
+This is a function that saves into a text file with the user's information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & to write in the file and a vector to reference the info that will be saved into the file \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+3                                                  \{
+4     std::ofstream ofs;
+5     ofs.open(f);
+6     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < v.size(); i++) \{
+7         \textcolor{comment}{//std::cout << "Save File: " << v[i] << std::endl;}
+8         ofs << v[i];
+9     \}
+10     ofs.close();
+11 \}
+\end{DoxyCode}

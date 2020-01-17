@@ -1,0 +1,43 @@
+\hypertarget{main_8cpp}{\subsection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab3.\+h\char`\"{}}\\*
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCode}
+4 \{   
+5     \textcolor{keyword}{const} \textcolor{keywordtype}{float} tempo = 1.2;
+6     std::ifstream inputFile(\textcolor{stringliteral}{"music"});
+7     \textcolor{keywordtype}{int} n = \hyperlink{lab3_8h_a1e9336e47067f8c3e92d68bf3a361931}{numberOfChars}(inputFile);
+8     std::cout << \textcolor{stringliteral}{"Music has "} << n << \textcolor{stringliteral}{" Characters\(\backslash\)n"};
+9     inputFile.close();
+10     \hyperlink{structMUSICELMT}{MUSICELMT} *music;
+11     music = \textcolor{keyword}{new} \hyperlink{structMUSICELMT}{MUSICELMT}[n];
+12     inputFile.open(\textcolor{stringliteral}{"music"});
+13     \hyperlink{lab3_8h_a465df42ae82d3c7db8516dc9d321450e}{readSong}(inputFile, music, n);
+14     \hyperlink{lab3_8h_a678c8ab56091134ef699893df8a5f683}{PlayMusic}(music, tempo);
+15     inputFile.close();
+16 
+17 \}
+\end{DoxyCode}

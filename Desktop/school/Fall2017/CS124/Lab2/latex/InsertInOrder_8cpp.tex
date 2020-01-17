@@ -1,0 +1,63 @@
+\hypertarget{InsertInOrder_8cpp}{\subsection{Insert\+In\+Order.\+cpp File Reference}
+\label{InsertInOrder_8cpp}\index{Insert\+In\+Order.\+cpp@{Insert\+In\+Order.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab2.\+h\char`\"{}}\\*
+Include dependency graph for Insert\+In\+Order.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{InsertInOrder_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab2_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{InsertInOrder_8cpp_afb7f80a286f00ef7b1d83c488097d083}{Insert\+In\+Order} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$\&head, std\+::string city)
+\begin{DoxyCompactList}\small\item\em Insert the list in order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{InsertInOrder_8cpp_afb7f80a286f00ef7b1d83c488097d083}{\index{Insert\+In\+Order.\+cpp@{Insert\+In\+Order.\+cpp}!Insert\+In\+Order@{Insert\+In\+Order}}
+\index{Insert\+In\+Order@{Insert\+In\+Order}!Insert\+In\+Order.\+cpp@{Insert\+In\+Order.\+cpp}}
+\paragraph[{Insert\+In\+Order}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Insert\+In\+Order (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$\&}]{head, }
+\item[{std\+::string}]{city}
+\end{DoxyParamCaption}
+)}}\label{InsertInOrder_8cpp_afb7f80a286f00ef7b1d83c488097d083}
+
+
+Insert the list in order. 
+
+Code that inserts the information of the linked list, but in alphabetical order. 
+\begin{DoxyCode}
+7 \{
+8 
+9     \hyperlink{structNODE}{NODE} *newnode; \textcolor{comment}{//creating a new node called newnode}
+10     
+11     newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE}; \textcolor{comment}{//allocating a new node}
+12     \textcolor{keywordflow}{if}(!newnode)
+13         \textcolor{keywordflow}{return} \hyperlink{lab2_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED}; \textcolor{comment}{//debugger if it fails}
+14         
+15     newnode->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city}=city; \textcolor{comment}{//to copy information into list}
+16     
+17     \hyperlink{structNODE}{NODE} *node = head, *prev = 0;
+18     \textcolor{comment}{//While node and nodepointing to city is less than}
+19     \textcolor{comment}{//or equal to city, prev equals node and node equals}
+20     \textcolor{comment}{// node points to next}
+21     \textcolor{keywordflow}{while} (node && node->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} <=city)
+22     \{
+23             prev = node;
+24             node = node->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next};
+25     \}
+26     
+27     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = node;
+28     \textcolor{keywordflow}{if}(prev)
+29     prev->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = newnode;
+30     \textcolor{keywordflow}{else}
+31         head = newnode;
+32         
+33     \textcolor{keywordflow}{return} \hyperlink{lab2_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+34         
+35 \}
+\end{DoxyCode}

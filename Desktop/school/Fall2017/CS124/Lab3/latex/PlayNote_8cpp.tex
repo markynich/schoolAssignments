@@ -1,0 +1,60 @@
+\hypertarget{PlayNote_8cpp}{\subsection{Play\+Note.\+cpp File Reference}
+\label{PlayNote_8cpp}\index{Play\+Note.\+cpp@{Play\+Note.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab3.\+h\char`\"{}}\\*
+Include dependency graph for Play\+Note.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{PlayNote_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{PlayNote_8cpp_ad075a727cdddb38fe5bfa5d055e57161}{Play\+Note} (\hyperlink{structNOTE}{N\+O\+T\+E} \&note, float tempo)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{PlayNote_8cpp_ad075a727cdddb38fe5bfa5d055e57161}{\index{Play\+Note.\+cpp@{Play\+Note.\+cpp}!Play\+Note@{Play\+Note}}
+\index{Play\+Note@{Play\+Note}!Play\+Note.\+cpp@{Play\+Note.\+cpp}}
+\paragraph[{Play\+Note}]{\setlength{\rightskip}{0pt plus 5cm}void Play\+Note (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+T\+E} \&}]{note, }
+\item[{float}]{tempo}
+\end{DoxyParamCaption}
+)}}\label{PlayNote_8cpp_ad075a727cdddb38fe5bfa5d055e57161}
+
+\begin{DoxyCode}
+4 \{
+5     std::ifstream inputFile(\textcolor{stringliteral}{"music"});
+6     \textcolor{keywordtype}{int} n = \hyperlink{lab3_8h_a1e9336e47067f8c3e92d68bf3a361931}{numberOfChars}(inputFile);
+7     std::cout << \textcolor{stringliteral}{"Music has "} << n << \textcolor{stringliteral}{" Characters\(\backslash\)n"};
+8     inputFile.close();
+9     \hyperlink{structMUSICELMT}{MUSICELMT} *music;
+10     music = \textcolor{keyword}{new} \hyperlink{structMUSICELMT}{MUSICELMT}[n];
+11     inputFile.open(\textcolor{stringliteral}{"music"});
+12     \hyperlink{lab3_8h_a465df42ae82d3c7db8516dc9d321450e}{readSong}(inputFile, music, n);
+13     inputFile.close();
+14         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i< n; i++)
+15         \{
+16             \textcolor{keywordflow}{if}(music[i].type == \textcolor{charliteral}{'n'})
+17             std::cout << music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_ae03dbb1306465fe61ec10da05fa5782e}{tone} << \textcolor{stringliteral}{" "}
+18             << music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_a258adf07267f95ab9630b33bad1b2fe2}{duration} << std::endl;
+19         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(music[i].type == \textcolor{charliteral}{'f'})
+20             std::cout << music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a9a2c77dc5f1c259a9a063f8e6ae18724}{start} << \textcolor{stringliteral}{" "}
+21                 << music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a3edee1f345e206cdc220b16d7d290018}{finish} << std::endl;
+22         \}
+23         std::string s1 = \textcolor{stringliteral}{"play -qn synth "};
+24         std::string s2 = \textcolor{stringliteral}{" pluck "};
+25         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)
+26         \{
+27         std::string ms = s1 + std:: to\_string(music[i].note.\hyperlink{structNOTE_a258adf07267f95ab9630b33bad1b2fe2}{duration}/16.0)
+28                         + s2 + music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_ae03dbb1306465fe61ec10da05fa5782e}{tone};
+29         std::cout << ms << std::endl;
+30         system(ms.c\_str());
+31         
+32     \}
+33 \}
+\end{DoxyCode}

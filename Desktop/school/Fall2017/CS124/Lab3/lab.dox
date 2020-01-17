@@ -1,0 +1,29 @@
+/** \page abc
+\latexonly
+\includegraphics{../lab3.png}
+\endlatexonly
+*/
+
+/** \page abc variation file
+\verbinclude music
+*/
+
+/** \page Specification
+        This program lets the user play the song "Amazing Grace"
+        instrumental with the use of stacks, pointers, and abc notation.
+*/
+
+/** \page Analysis
+        This program runs with the notes of the song being printed
+        out for the user to see as the program plays the song. Once the
+        song ends, it ends. 
+*/
+
+/** \page Design
+        When the program executes, it will automatically start playing
+        the song "Amazing Grace" and while the song plays, it will
+        display each chord that is playing in the song. As the program
+        continues to print out the abc notation and play the notation,
+        it will eventually come to an end and automatically terminate
+        the program.
+*/

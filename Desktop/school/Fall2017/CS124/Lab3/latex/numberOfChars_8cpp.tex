@@ -1,0 +1,39 @@
+\hypertarget{numberOfChars_8cpp}{\subsection{number\+Of\+Chars.\+cpp File Reference}
+\label{numberOfChars_8cpp}\index{number\+Of\+Chars.\+cpp@{number\+Of\+Chars.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab3.\+h\char`\"{}}\\*
+Include dependency graph for number\+Of\+Chars.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{numberOfChars_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{numberOfChars_8cpp_a1e9336e47067f8c3e92d68bf3a361931}{number\+Of\+Chars} (std\+::ifstream \&f)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{numberOfChars_8cpp_a1e9336e47067f8c3e92d68bf3a361931}{\index{number\+Of\+Chars.\+cpp@{number\+Of\+Chars.\+cpp}!number\+Of\+Chars@{number\+Of\+Chars}}
+\index{number\+Of\+Chars@{number\+Of\+Chars}!number\+Of\+Chars.\+cpp@{number\+Of\+Chars.\+cpp}}
+\paragraph[{number\+Of\+Chars}]{\setlength{\rightskip}{0pt plus 5cm}int number\+Of\+Chars (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{numberOfChars_8cpp_a1e9336e47067f8c3e92d68bf3a361931}
+
+\begin{DoxyCode}
+4 \{
+5 
+6     \textcolor{keywordtype}{int} n = 0;
+7     \textcolor{keywordtype}{char} c;
+8     \textcolor{keywordflow}{while}(f >> c)
+9         n++;
+10     \textcolor{comment}{//count characters}
+11     \textcolor{keywordflow}{return} n;
+12 
+13 \}
+\end{DoxyCode}

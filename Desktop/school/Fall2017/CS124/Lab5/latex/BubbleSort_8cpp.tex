@@ -1,0 +1,48 @@
+\hypertarget{BubbleSort_8cpp}{\subsection{Bubble\+Sort.\+cpp File Reference}
+\label{BubbleSort_8cpp}\index{Bubble\+Sort.\+cpp@{Bubble\+Sort.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for Bubble\+Sort.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{BubbleSort_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{BubbleSort_8cpp_aa2464188c1d592df9d3eef97a2deab0f}{Bubble\+Sort} (\hyperlink{structAQIData}{A\+Q\+I\+Data} a\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{BubbleSort_8cpp_aa2464188c1d592df9d3eef97a2deab0f}{\index{Bubble\+Sort.\+cpp@{Bubble\+Sort.\+cpp}!Bubble\+Sort@{Bubble\+Sort}}
+\index{Bubble\+Sort@{Bubble\+Sort}!Bubble\+Sort.\+cpp@{Bubble\+Sort.\+cpp}}
+\paragraph[{Bubble\+Sort}]{\setlength{\rightskip}{0pt plus 5cm}void Bubble\+Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data}}]{a\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{BubbleSort_8cpp_aa2464188c1d592df9d3eef97a2deab0f}
+
+\begin{DoxyCode}
+4 \{
+5  \textcolor{keywordtype}{int} i, disorder = n;
+6  \textcolor{keywordflow}{while} (disorder) \{
+7  disorder = 0;
+8  \textcolor{comment}{// Bubble up and mark any disorder:}
+9  \textcolor{comment}{// (When n becomes 1, the "for" loop is not}
+10  \textcolor{comment}{// executed, "disorder" remains 0, and the "while"}
+11  \textcolor{comment}{// loop is broken.)}
+12  \textcolor{keywordflow}{for} (i = 1; i < n; i++) \{
+13  \textcolor{keywordflow}{if} (a[i] < a[i-1]) \{
+14  \hyperlink{lab_8h_ab6d7658ea8e93ba15766ce5d1a9e7511}{Swap}(a[i], a[i-1]);
+15  disorder++;
+16  \}
+17  \}
+18  n--;
+19  \}
+20 \};
+\end{DoxyCode}

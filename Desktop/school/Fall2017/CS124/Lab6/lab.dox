@@ -1,0 +1,105 @@
+/** \page Specification
+In this project, we will simulate a telegraph station that can encode messages from text to Morse code and decode Morse code back to text. The encoding is accomplished by looking up a symbol in a table and copying its Morse code into the output string. The decoding is implemented with the help of a binary "decoding" tree. Morse code for each letter represents a path from the root of the tree to some node: a "dot" means go left, and a "dash" means go right. The node at the end of the path contains the symbol corresponding to the code.
+*/
+/** \page Analysis
+Inputs:
+Morse code
+The user entering letters
+The user entering morse code
+User selction of encode and decode
+Outputs:
+Morse code to letters
+letters to morse code
+*/
+/** \page Design 
+The desgin is to have html to display our input and output and have the C++ do all of the work. we have a total of 5 functions.
+openTree.cpp:
+Builds the tree needed for the morse code translations.Sets the root node to null and builds from the tree from that function builds from the Morse table structure from the privateclass.
+encode.cpp:
+Converts  text  into  morse  code.   It  finds  each  symbol  in  the  table(skips it if not found).
+decode.cpp:
+Converts morse code into text.  It follows the path determined from the string parameter and once it reaches the end, it stores the letter in the string named text which is returned at the end of the functions.
+closeTree.cpp
+Destroys the tree that was built with the buildTree function.  Uses recursion to destroy each node of the tree.
+*/
+/** \page Testcase1
+This is our home html page. Let's try to encode the word "trees". After we hit the go button, we should be redirected to a new html page with "trees" translated to morse code.
+
+    \latexonly
+    \includegraphics{../test21.png}
+    \endlatexonly
+*/
+/** \page Testcase2
+Nice it worked. Now let's copy the output from our morse code and validate it using our decode function. 
+
+    \latexonly
+    \includegraphics{../test31.png}
+    \endlatexonly
+*/
+/** \page Testcase3
+After copying pasting into our decode text field. We should get an abc translation when we click the go button.
+
+    \latexonly
+    \includegraphics{../test41.png}
+    \endlatexonly
+*/
+/** \page Testcase4
+Great! Our encode function works and our decode function work since our inputs match the outputs. 
+
+    \latexonly
+    \includegraphics{../test51.png}
+    \endlatexonly
+*/
+/** \page Testcase5
+Now let's try another test. Let's encode "Topham". We should receive the morsecode translation of it. 
+   
+    \latexonly
+    \includegraphics{../test61.png}
+    \endlatexonly
+*/
+/** \page Testcase6
+Awesome! let's copy and paste this morsecode in to our decode function to validate it. 
+
+    \latexonly
+    \includegraphics{../test71.png}
+    \endlatexonly
+*/
+/** \page Testcase7
+We should see "TOPHAM" when we submit it. 
+\latexonly
+\includegraphics{../test81.png}
+\endlatexonly
+*/
+/** \page Testcase8
+Beautiful. Let's try one more test case to make sure it works.
+ 
+    \latexonly
+    \includegraphics{../test91.png}
+    \endlatexonly
+*/
+/** \page Testcase9
+Here we try our favorite word "banana".
+ 
+\latexonly
+\includegraphics{../test101.png}
+\endlatexonly
+*/
+/** \page Testcase10
+\latexonly
+\includegraphics{../test111.png}
+\endlatexonly
+*/
+/** \page Testcase11
+Great test case 3 works too!
+
+\latexonly
+\includegraphics{../test121.png}
+\endlatexonly
+*/
+/** \page Testcase12
+DDD Tree Example
+
+\latexonly
+\includegraphics{../dddtree1.png}
+\endlatexonly
+*/

@@ -1,0 +1,51 @@
+\hypertarget{lab_8cpp}{\subsection{lab.\+cpp File Reference}
+\label{lab_8cpp}\index{lab.\+cpp@{lab.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for lab.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{lab_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{lab_8cpp_a2db0e63dc2d444c8135d1ef721a3297a}{operator$<$$<$} (ostream \&o, \hyperlink{structENTRY}{E\+N\+T\+R\+Y} \&e)
+\item 
+istream \& \hyperlink{lab_8cpp_ad328da1c67672d9165af2d1d7c7fa913}{operator$>$$>$} (istream \&i, \hyperlink{structENTRY}{E\+N\+T\+R\+Y} \&e)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8cpp_a2db0e63dc2d444c8135d1ef721a3297a}{\index{lab.\+cpp@{lab.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lab.\+cpp@{lab.\+cpp}}
+\paragraph[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{o, }
+\item[{{\bf E\+N\+T\+R\+Y} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8cpp_a2db0e63dc2d444c8135d1ef721a3297a}
+
+\begin{DoxyCode}
+19 \{
+20     o << e.\hyperlink{structENTRY_a7dfcf0a0b27dc7cecf80565a615d6233}{word} << \textcolor{stringliteral}{"\(\backslash\)t"};
+21     o << e.\hyperlink{structENTRY_aeffa74a793268864bbbdf6a3645bf36a}{translation} << endl;
+22     \textcolor{keywordflow}{return} o;
+23 \}
+\end{DoxyCode}
+\hypertarget{lab_8cpp_ad328da1c67672d9165af2d1d7c7fa913}{\index{lab.\+cpp@{lab.\+cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!lab.\+cpp@{lab.\+cpp}}
+\paragraph[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{istream \&}]{i, }
+\item[{{\bf E\+N\+T\+R\+Y} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8cpp_ad328da1c67672d9165af2d1d7c7fa913}
+
+\begin{DoxyCode}
+26 \{
+27     i >> e.\hyperlink{structENTRY_a7dfcf0a0b27dc7cecf80565a615d6233}{word} >> e.\hyperlink{structENTRY_aeffa74a793268864bbbdf6a3645bf36a}{translation};
+28 \}
+\end{DoxyCode}

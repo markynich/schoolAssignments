@@ -1,0 +1,184 @@
+/** \page Specification
+This is a stock program which is a system for trading in a dozen stocks. The system maintains the list of all active buy and sell orders for each stock that the customer has entered. In this system, the customer can log in, give his or her name, request quotes and place orders. An order holds the name of the customer, a buy or sell indicator, the stock symbol, the number of shares and a price limit. This system keeps all buy orders for each stock in a priority queue ranked by the bid price, and all sell orders in an inverted priority queue with the smallest "ask" price order on top. 
+
+*/
+
+/** \page Analysis
+This program features around five different stocks with the user's option of auctioning for shares, bidding for buys, and asking for a price. Each stock will have a graph and show how much each stock is worth. 
+When the program runs, it will present the user the market of five different stocks. Each stock has a unique value and can change as the user shares, buys, and asks. Each of the three functions have a button for the user to click to execute the function. Each time the user executes buy function, it will enter the value in a heap tree if it's not already in there. Also the user can buy that amount of shares for the price they are buying/bidding for. The shares function allows the user to enter how many shares he or she wants to buy or sell. Then the ask function lets the user enter the amount she or he wants for selling the amount of shares they are listing. 
+The output of the function will display how many shares he or she have bought or sell for that stock. The user will then see how much they bought each share for and the commission they will be getting. Finally, it will print out the total worth of shares the user bought. Then it will display the lastest bid, highest bid, and lowest bid. Also, the user is allowed to ask the market to display the lastest bid, highest bid, and lowest bid or a specific stock. It will also display the bid size and ask size of how many shares they bought or sell.
+When the user adds the highest bid, it will move the heap tree around for the highest bid to be added onto the tree and replace the print out of highest bid when the user asks for details of the stock. The same applies for lowest bid. The heap tree will move around the values until the value has a spot and if the value was the lowest, it will display that value the next time the user asks for details of the stock i.e. highest,lowest, latest, shares amount, etc.
+*/
+/** \page Design 
+When this program is launched, the user is given the option to choose from any company they would like do their stock exchange. They are given five different companies in a drop down bar to choose from. Once the user has chosen a company, they are given the option to either sell or buy. After the user has chosen one of those two options, the user is then, asked to give their name, shares amount, and price. After the user has entered the following, the program will then execute and insert the information into the heap tree and search through the heap tree. The heap tree will try to find a matching price that the user has input and it will execute the purchase. If there was no match, it will output "No seller/buyer" for the user. Also, if the user enter's the name market, it will purchase/sell the shares from the market. After every purchase and sell, it will display in the live graph and live table. The graph and table will update after every transaction.
+*/ 
+
+
+/*! \page HTML
+\verbinclude stockz.html
+*/
+
+/*! \page Images/Features
+In our HTML, we provided images and features such as a live table and live graph that
+uses JavaScript in order to update and show what is added to the Heap. Red bar for sell. Blue bar for buy. 
+
+\latexonly
+\includegraphics[scale=0.5]{../america.png}
+\endlatexonly
+*/
+
+/*! \page Images/Features2
+Live Table of Transaction Requests
+
+\latexonly
+\includegraphics[scale=0.5]{../table.png}
+\endlatexonly
+*/
+
+
+/*! \page TestCases1
+Here is our home html page where one can input their name, how many shares, their prices,
+what stock they like and if they want to buy or sell.
+
+\latexonly 
+\includegraphics[scale=0.5]{../test1.png}
+\endlatexonly
+*/
+
+/*! \page TestCases2
+Let's say my buddy Kush wants to sell some of his Amazon stocks, but there are currently no buyers. 
+We would expect that after clicking the go button. We would be redirected to an html page telling us if our transaction went through. 
+Since no one is currently investing in Amazon, we should expect an output saying "no buyer found" and "a request pending".
+
+\latexonly
+\includegraphics[scale=0.5]{../test2.png}
+\endlatexonly
+*/
+
+/*! \page TestCases3
+As you can see, after submitting our request, we get our expected output telling us that our request has been added but sadly no 
+one is currently buying. 
+
+\latexonly
+\includegraphics[scale=0.5]{../test3.png}
+\endlatexonly
+*/
+
+/*! \page TestCases4
+Now don't worry Kush. Although, your request has yet to be fufilled. My buddy Ganja thinks your prices are a bit too much for him and thinks 
+he has a good offer for a lower price. Now when Ganja sends his request, since Kush is the only one selling Amazon stocks but for a higher price.
+We would expect Ganja to get a similar output but instead it would say that "there are no sellers found and your submission is pending".
+
+\latexonly
+\includegraphics[scale=0.5]{../test4.png}
+\endlatexonly
+*/
+
+/*! \page TestCases5
+And as expected, Ganja's request has been added, but there is no one selling at that price.
+
+\latexonly
+\includegraphics[scale=0.5]{../test5.png}
+\endlatexonly
+*/
+
+/*! \page TestCase6
+Looking at the live graph, Kush sees Ganja's offer and he thinks its a fair deal. So Kush changes his offer to match Ganja's. Now
+when Kush hits the "go button", we should expect to see an output saying "there is a match found" and it should display the details of who
+you are exchanging with. In this case, we should see Ganja's info. 
+
+\latexonly
+\includegraphics[scale=0.5]{../test6.png}
+\endlatexonly
+*/
+
+/*! \page TestCase7
+Nice! The output is as we expected. We see who we are trading with and the shares they are receiving. 
+
+\latexonly
+\includegraphics[scale=0.5]{../test7.png}
+\endlatexonly
+*/
+
+/*! \page TestCase8
+Now let's test what happens when there is a partial buy. Here we have Druglord Peter selling 10 Ohlone shares for $60. Now of course, we need a buyer.
+
+\latexonly
+\includegraphics[scale=0.5]{../test8.png}
+\endlatexonly
+*/
+
+/*! \page TestCase9
+Here we have a buyer named Fabio and he only wants 6 Ohlone shares for $60. When Fabio proceeds, a match would be found and transaction would occur, but ONLY
+for those 6 shares. 
+
+\latexonly
+\includegraphics[scale=0.5]{../test9.png}
+\endlatexonly
+*/
+
+/*! \page TestCase10
+Awesome. As expected. We found a match and all information of the other party is displayed and so are the number shares bought.
+\latexonly
+\includegraphics[scale=0.5]{../test10.png}
+\endlatexonly
+*/
+
+/*! \page TestCase11
+Now let's test what happens where there is a partial sell. Here we have Kush again and now he's going to invest all his Amazon earnings
+on some Ganja4Lyfe stocks. He wants 50 shares for $80. A great deal!
+
+\latexonly
+\includegraphics[scale=1.0]{../test11.png}
+\endlatexonly
+*/
+
+/*! \page TestCase12
+And now here we have his old partner Ganja. And he thinks the deal is terrible, but since Kush is such a good sport to sell him those Amazon stocks.
+He'll sell Kush 1 Ganja4Lyfe share. When Ganja submits this request, we should see that there is a match found and the other party's info and the number of stocks
+exchanged.
+
+\latexonly 
+\includegraphics[scale=0.5]{../test13.png}
+\endlatexonly
+*/
+
+/*! \page TestCase13
+Beautiful. As expected, Ganja sells 1 share of Ganja4Lyfe to Kush for $80. 
+
+\latexonly
+\includegraphics[scale=0.5]{../test14.png}
+\endlatexonly
+*/
+
+/*! \page TestCase14
+Now let's try to do a market sell. We should see a successful transaction, since the market handles the request. 
+
+\latexonly
+\includegraphics[scale=0.5]{../test15.png}
+\endlatexonly
+*/
+
+/*! \page TestCase15
+Nice!
+
+\latexonly
+\includegraphics[scale=0.5]{../test16.png}
+\endlatexonly
+*/
+
+/*! \page TestCase16
+How about market buy? The same should happen.
+
+\latexonly
+\includegraphics[scale=0.5]{../test17.png}
+\endlatexonly
+*/
+
+/*! \page TestCase17
+Market buy works too!
+
+\latexonly
+\includegraphics[scale=0.5]{../test18.png}
+\endlatexonly
+*/

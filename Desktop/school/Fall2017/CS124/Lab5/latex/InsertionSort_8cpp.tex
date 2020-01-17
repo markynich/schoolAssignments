@@ -1,0 +1,48 @@
+\hypertarget{InsertionSort_8cpp}{\subsection{Insertion\+Sort.\+cpp File Reference}
+\label{InsertionSort_8cpp}\index{Insertion\+Sort.\+cpp@{Insertion\+Sort.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for Insertion\+Sort.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{InsertionSort_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{InsertionSort_8cpp_a597c6b68a0c2d056ef89facc3208069a}{Insertion\+Sort} (\hyperlink{structAQIData}{A\+Q\+I\+Data} a\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{InsertionSort_8cpp_a597c6b68a0c2d056ef89facc3208069a}{\index{Insertion\+Sort.\+cpp@{Insertion\+Sort.\+cpp}!Insertion\+Sort@{Insertion\+Sort}}
+\index{Insertion\+Sort@{Insertion\+Sort}!Insertion\+Sort.\+cpp@{Insertion\+Sort.\+cpp}}
+\paragraph[{Insertion\+Sort}]{\setlength{\rightskip}{0pt plus 5cm}void Insertion\+Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data}}]{a\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{InsertionSort_8cpp_a597c6b68a0c2d056ef89facc3208069a}
+
+\begin{DoxyCode}
+3 \{
+4  \textcolor{keywordtype}{int} i, j;
+5  \hyperlink{structAQIData}{AQIData} aCurrent;
+6  \textcolor{keywordflow}{for} (i = 1; i < n; i++) \{
+7  \textcolor{comment}{// Save the current element:}
+8  aCurrent = a[i];
+9  \textcolor{comment}{// Find location j where it should be inserted}
+10  \textcolor{comment}{// among the first i–1 elements:}
+11  \textcolor{keywordflow}{for} (j = 0; j < i; j++)
+12  \textcolor{keywordflow}{if} (a[j] >= aCurrent) \textcolor{keywordflow}{break};
+13  \textcolor{comment}{// Shift all elements between j and i one place to the right:}
+14  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = i-1; k >= j; k--)
+15  a[k+1] = a[k];
+16  \textcolor{comment}{// Insert saved element where it belongs:}
+17  a[j] = aCurrent;
+18  \}
+19 \}
+\end{DoxyCode}

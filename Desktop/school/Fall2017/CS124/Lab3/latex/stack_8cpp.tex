@@ -1,0 +1,96 @@
+\hypertarget{stack_8cpp}{\subsection{stack.\+cpp File Reference}
+\label{stack_8cpp}\index{stack.\+cpp@{stack.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab3.\+h\char`\"{}}\\*
+Include dependency graph for stack.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{stack_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{stack_8cpp_abd657d26045a775f57a837427142cfbd}{Create} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int size)
+\item 
+\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{stack_8cpp_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{Push} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int item)
+\item 
+\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{stack_8cpp_a9ab82590ff3d7086853fd9b2106d255c}{Pop} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int \&item)
+\item 
+void \hyperlink{stack_8cpp_a7f5d0e2c1d5c45b52ee6d1d91e420e95}{Destroy} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{stack_8cpp_abd657d26045a775f57a837427142cfbd}{\index{stack.\+cpp@{stack.\+cpp}!Create@{Create}}
+\index{Create@{Create}!stack.\+cpp@{stack.\+cpp}}
+\paragraph[{Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Create (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{stack_8cpp_abd657d26045a775f57a837427142cfbd}
+
+\begin{DoxyCode}
+10 \{
+11     stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[size];
+12     \textcolor{keywordflow}{if} (!stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf})
+13         \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+14     stack.\hyperlink{structSTACK_ad10f9d8025122e8c82832d7a34c77e40}{size} = size;
+15     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} = 0;
+16     \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+17 \}
+\end{DoxyCode}
+\hypertarget{stack_8cpp_a7f5d0e2c1d5c45b52ee6d1d91e420e95}{\index{stack.\+cpp@{stack.\+cpp}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!stack.\+cpp@{stack.\+cpp}}
+\paragraph[{Destroy}]{\setlength{\rightskip}{0pt plus 5cm}void Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack}
+\end{DoxyParamCaption}
+)}}\label{stack_8cpp_a7f5d0e2c1d5c45b52ee6d1d91e420e95}
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keyword}{delete} [] stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf};
+46 \}
+\end{DoxyCode}
+\hypertarget{stack_8cpp_a9ab82590ff3d7086853fd9b2106d255c}{\index{stack.\+cpp@{stack.\+cpp}!Pop@{Pop}}
+\index{Pop@{Pop}!stack.\+cpp@{stack.\+cpp}}
+\paragraph[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Pop (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{stack_8cpp_a9ab82590ff3d7086853fd9b2106d255c}
+
+\begin{DoxyCode}
+33 \{
+34     
+35     \textcolor{keywordflow}{if} (stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} == 0)
+36         \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+37     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}--;
+38     item = stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf}[stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}];
+39     \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+40 
+41 \}
+\end{DoxyCode}
+\hypertarget{stack_8cpp_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{\index{stack.\+cpp@{stack.\+cpp}!Push@{Push}}
+\index{Push@{Push}!stack.\+cpp@{stack.\+cpp}}
+\paragraph[{Push}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Push (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int}]{item}
+\end{DoxyParamCaption}
+)}}\label{stack_8cpp_a805a86f7ac8e643c87ea7d7cbb1b2c9c}
+
+\begin{DoxyCode}
+23 \{
+24 
+25     \textcolor{keywordflow}{if} (stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} == stack.\hyperlink{structSTACK_ad10f9d8025122e8c82832d7a34c77e40}{size})
+26         \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+27     stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf}[stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}] = item;
+28     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}++;
+29     \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+30 \}
+\end{DoxyCode}

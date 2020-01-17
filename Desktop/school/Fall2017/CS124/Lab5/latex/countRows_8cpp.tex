@@ -1,0 +1,37 @@
+\hypertarget{countRows_8cpp}{\subsection{count\+Rows.\+cpp File Reference}
+\label{countRows_8cpp}\index{count\+Rows.\+cpp@{count\+Rows.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for count\+Rows.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{countRows_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{countRows_8cpp_a15de8e3dda2c911202abcc072d075935}{count\+Rows} (std\+::string f)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{countRows_8cpp_a15de8e3dda2c911202abcc072d075935}{\index{count\+Rows.\+cpp@{count\+Rows.\+cpp}!count\+Rows@{count\+Rows}}
+\index{count\+Rows@{count\+Rows}!count\+Rows.\+cpp@{count\+Rows.\+cpp}}
+\paragraph[{count\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}int count\+Rows (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f}
+\end{DoxyParamCaption}
+)}}\label{countRows_8cpp_a15de8e3dda2c911202abcc072d075935}
+
+\begin{DoxyCode}
+4 \{   
+5     std::ifstream ifs(f.c\_str());
+6     \textcolor{keywordtype}{int} n = 0;
+7     std::string s;
+8     \textcolor{keywordflow}{while}(getline(ifs,s)) n++;
+9     ifs.close();
+10     \textcolor{keywordflow}{return} n;
+11 \}
+\end{DoxyCode}

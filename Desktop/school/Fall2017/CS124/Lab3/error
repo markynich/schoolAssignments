@@ -1,0 +1,35 @@
+main.cpp: In function ‘int main()’:
+main.cpp:12:33: error: too many arguments to function ‘void readSong(std::ifstream&, MUSICELMT*)’
+     readSong(inputFile, music, n);
+                                 ^
+In file included from main.cpp:1:0:
+lab3.h:59:6: note: declared here
+ void readSong(std::ifstream &f, MUSICELMT m[]);
+      ^
+main.cpp:26:31: error: ‘to_string’ is not a member of ‘std’
+         std::string ms = s1 + std::to_string(music[i].note.duration/16.0)
+                               ^
+main.cpp:28:9: error: ‘str’ has not been declared
+         str::cout << ms << endl;
+         ^
+main.cpp:28:28: error: ‘endl’ was not declared in this scope
+         str::cout << ms << endl;
+                            ^
+main.cpp:28:28: note: suggested alternative:
+In file included from /usr/include/c++/4.9/iostream:39:0,
+                 from lab3.h:1,
+                 from main.cpp:1:
+/usr/include/c++/4.9/ostream:564:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^
+PlayMusic.cpp: In function ‘void PlayMusic(MUSICELMT*, float)’:
+PlayMusic.cpp:30:50: error: ‘push’ was not declared in this scope
+                             push(stack, current+1);
+                                                  ^
+PlayMusic.cpp:36:36: error: ‘IsEmpty’ was not declared in this scope
+             else if (!IsEmpty(stack))
+                                    ^
+ReadSong.cpp: In function ‘void ReadSong(std::ifstream&, MUSICELMT*, int)’:
+ReadSong.cpp:10:19: error: invalid conversion from ‘char’ to ‘PLAY’ [-fpermissive]
+         m[i].type = type;
+                   ^

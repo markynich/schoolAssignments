@@ -1,0 +1,133 @@
+\hypertarget{project_8cpp}{\subsection{project.\+cpp File Reference}
+\label{project_8cpp}\index{project.\+cpp@{project.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}Stock.\+h\char`\"{}}\\*
+Include dependency graph for project.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{project_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{project_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{project_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{project.\+cpp@{project.\+cpp}!main@{main}}
+\index{main@{main}!project.\+cpp@{project.\+cpp}}
+\paragraph[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{project_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCode}
+3 \{    
+4     \hyperlink{classStock}{Stock} s;
+5     std::vector<double> v;
+6     std::vector<double> z;
+7     std::string test = getenv(\textcolor{stringliteral}{"QUERY\_STRING"});
+8     std::string delimiter = \textcolor{stringliteral}{"&"};
+9     std::string stockName = test.substr(0, test.find(delimiter)); \textcolor{comment}{// extract StockName}
+10     test.erase(0, stockName.length()+1); \textcolor{comment}{// Remove Stock Info from string}
+11     stockName.erase(0,6);
+12     std::string typeInput = test.substr(0, test.find(delimiter));
+13     test.erase(0, typeInput.length()+1);
+14     typeInput.erase(0,2);
+15     std::string nameInput = test.substr(0, test.find(delimiter));
+16     test.erase(0, nameInput.length()+1);
+17     nameInput.erase(0,2);
+18     std::string sharesInput = test.substr(0, test.find(delimiter));
+19     test.erase(0, sharesInput.length());
+20     sharesInput.erase(0,2);
+21     std::string priceInput = test;
+22     priceInput.erase(0,3);
+23     \textcolor{comment}{/*}
+24 \textcolor{comment}{    std::cout << priceInput << std::endl;}
+25 \textcolor{comment}{    std::cout << "*****************" << std::endl;}
+26 \textcolor{comment}{    std::cout << stockName << std::endl;}
+27 \textcolor{comment}{    std::cout << typeInput << std::endl;}
+28 \textcolor{comment}{    std::cout << nameInput << std::endl;}
+29 \textcolor{comment}{    std::cout << sharesInput << std::endl;}
+30 \textcolor{comment}{    std::cout << priceInput << std::endl;}
+31 \textcolor{comment}{    std::cout << "**************" << std::endl;}
+32 \textcolor{comment}{    */}
+33     \textcolor{keywordflow}{if} (typeInput == \textcolor{stringliteral}{"Buy"}) \{
+34         \textcolor{keywordtype}{double} priceDouble = std::stod(priceInput);
+35         s.\hyperlink{classStock_a00ba093f5066735943fc4651f17905fe}{maxH}.\hyperlink{classHEAP_a61daf2c080cdb92947a0e591fbd8d772}{Insert}(priceDouble);
+36         s.\hyperlink{classStock_a00ba093f5066735943fc4651f17905fe}{maxH}.\hyperlink{classHEAP_a61daf2c080cdb92947a0e591fbd8d772}{Insert}(priceDouble);
+37         \textcolor{comment}{//s.maxH.printHeap();}
+38         \textcolor{keywordtype}{double} shareDouble = std::stod(sharesInput);
+39         \textcolor{comment}{//std::cout << "priceDouble: " << priceDouble << std::endl;}
+40         \textcolor{comment}{//std::cout << "shareDouble: " <<  shareDouble << std::endl;}
+41         \hyperlink{loadFile_8cpp_aa059384bbb4de4156d602a4293d88ef4}{loadFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/shares.json"}, z); 
+42         \hyperlink{loadFile_8cpp_aa059384bbb4de4156d602a4293d88ef4}{loadFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/min.json"}, v);
+43         \textcolor{comment}{//std::cout << v[0] << std::endl;}
+44         \textcolor{keywordflow}{if} (v.size() == 0 )
+45             std::cout << \textcolor{stringliteral}{"<html><h1>No seller found. Request pending...</h1></html>"} << std::endl;
+46         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(v.size() != 0 ) \{
+47             \textcolor{keywordtype}{int} i;
+48             \textcolor{keywordflow}{for}(i = 0; i < v.size(); i++) \{
+49                 \textcolor{keywordflow}{if} (priceDouble == v[i]) \{
+50                     std::cout << \textcolor{stringliteral}{"<html><h1>Match found!</h1></html>"} << std::endl;
+51                     shareDouble = shareDouble;
+52                     std::cout << \textcolor{stringliteral}{"<html><h2>Stock: Nvidia<h2></html>"} << std::endl;
+53                     std::cout << \textcolor{stringliteral}{"<html><h3>Name: Market</h3></html>"} << std::endl;
+54                     std::cout << \textcolor{stringliteral}{"<html><h4>Shares:"} << shareDouble << \textcolor{stringliteral}{"</h4></html>"} << std::endl;
+55                     std::cout << \textcolor{stringliteral}{"<html><h5>Type: Sell </h5></html>"} << std::endl;
+56                     std::cout << \textcolor{stringliteral}{"<html><h6>Prices:"} << priceDouble << \textcolor{stringliteral}{"</h6></html>"} << std::endl;
+57                 \}
+58                 \textcolor{keywordflow}{if}(i == v.size()-1 && priceDouble != v[i])
+59                     std::cout << \textcolor{stringliteral}{"<html><h1>No seller found. Request pending...</h1></html"} << std::endl;
+60                 \}
+61         \}
+62         v.clear();
+63         v.push\_back(priceDouble);
+64         z.clear();
+65         z.push\_back(shareDouble);
+66         \hyperlink{saveFile_8cpp_ad613df1d9cfb29d70e453c5bdec4a9b8}{saveFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/info.json"}, v);
+67         \hyperlink{saveFile_8cpp_ad613df1d9cfb29d70e453c5bdec4a9b8}{saveFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/shares.json"}, z);  
+68     \}
+69     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (typeInput == \textcolor{stringliteral}{"Sell"}) \{
+70         \textcolor{keywordtype}{double} priceDouble = std::stod(priceInput);
+71         s.\hyperlink{classStock_ab3a0f86a08ac6fa8dac1e9a1a855d0df}{minH}.\hyperlink{classHEAP_a61daf2c080cdb92947a0e591fbd8d772}{Insert}(priceDouble);
+72         s.\hyperlink{classStock_ab3a0f86a08ac6fa8dac1e9a1a855d0df}{minH}.\hyperlink{classHEAP_a61daf2c080cdb92947a0e591fbd8d772}{Insert}(priceDouble);
+73         \textcolor{comment}{//s.minH.printHeap();}
+74         \textcolor{keywordtype}{double} shareDouble = std::stod(sharesInput);
+75         \textcolor{comment}{//std::cout << "sharesInput: " << sharesInput << std::endl;}
+76         \textcolor{comment}{//std::cout << "priceDouble: " << priceDouble << std::endl;}
+77         \hyperlink{loadFile_8cpp_aa059384bbb4de4156d602a4293d88ef4}{loadFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/shares.json"}, z);
+78         \hyperlink{loadFile_8cpp_aa059384bbb4de4156d602a4293d88ef4}{loadFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/info.json"}, v);
+79         \textcolor{keywordflow}{if} (v.size() == 0 )
+80             std::cout << \textcolor{stringliteral}{"<html><h1>No seller found. Request pending...</h1></html>"} << std::endl;
+81         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(v.size() != 0 ) \{
+82             \textcolor{keywordtype}{int} i;
+83             \textcolor{keywordflow}{for}(i = 0; i < v.size(); i++) \{
+84                 \textcolor{keywordflow}{if} (priceDouble == v[i]) \{
+85                     shareDouble = shareDouble;
+86                     \textcolor{keywordflow}{if}( shareDouble < 0) 
+87                         shareDouble = shareDouble * -1;
+88                     std::cout << \textcolor{stringliteral}{"<html><h1>Match found!</h1></html>"} << std::endl;
+89                     std::cout << \textcolor{stringliteral}{"<html><h2>Stock: Nvidia<h2></html>"} << std::endl;
+90                     std::cout << \textcolor{stringliteral}{"<html><h3>Name: Market</h3></html>"} << std::endl;
+91                     std::cout << \textcolor{stringliteral}{"<html><h4>Shares:"} << shareDouble << \textcolor{stringliteral}{"</h4></html>"} << std::endl;
+92                     std::cout << \textcolor{stringliteral}{"<html><h5>Type: Buy </h5></html>"} << std::endl;
+93                     std::cout << \textcolor{stringliteral}{"<html><h6>Prices:"} << priceDouble << \textcolor{stringliteral}{"</h6></html>"} << std::endl;
+94                 \}
+95                 \textcolor{keywordflow}{if}(i == v.size()-1 && priceDouble != v[i])
+96                     std::cout << \textcolor{stringliteral}{"<html><h1>No buyer found. Request pending...</h1></html>"} << std::endl;
+97                 \}
+98         \}
+99         v.clear();
+100         v.push\_back(priceDouble);
+101         z.clear();
+102         z.push\_back(shareDouble);
+103         \hyperlink{saveFile_8cpp_ad613df1d9cfb29d70e453c5bdec4a9b8}{saveFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/min.json"}, v);
+104         \hyperlink{saveFile_8cpp_ad613df1d9cfb29d70e453c5bdec4a9b8}{saveFile}(\textcolor{stringliteral}{"/home/debian/cs124/stock/shares.json"}, z);    
+105         \}
+106 \}
+\end{DoxyCode}

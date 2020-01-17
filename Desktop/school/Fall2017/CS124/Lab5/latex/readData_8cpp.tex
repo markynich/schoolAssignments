@@ -1,0 +1,52 @@
+\hypertarget{readData_8cpp}{\subsection{read\+Data.\+cpp File Reference}
+\label{readData_8cpp}\index{read\+Data.\+cpp@{read\+Data.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for read\+Data.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{readData_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{readData_8cpp_a3700d6a6f7a91d84cde0120413f3bf38}{read\+Data} (std\+::string f, \hyperlink{structAQIData}{A\+Q\+I\+Data} aqi\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{readData_8cpp_a3700d6a6f7a91d84cde0120413f3bf38}{\index{read\+Data.\+cpp@{read\+Data.\+cpp}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!read\+Data.\+cpp@{read\+Data.\+cpp}}
+\paragraph[{read\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void read\+Data (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f, }
+\item[{{\bf A\+Q\+I\+Data}}]{aqi\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{readData_8cpp_a3700d6a6f7a91d84cde0120413f3bf38}
+
+\begin{DoxyCode}
+4 \{
+5 
+6     std::ifstream ifs(f.c\_str());
+7     std::string s; \textcolor{keywordtype}{char} comma;
+8     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+9     \{
+10         getline(ifs,s,\textcolor{charliteral}{','});\textcolor{comment}{//reads state}
+11         getline(ifs,aqi[i].county,\textcolor{charliteral}{','});\textcolor{comment}{//reads county}
+12         getline(ifs,s,\textcolor{charliteral}{','});\textcolor{comment}{//ignores county and reads year}
+13         getline(ifs,s,\textcolor{charliteral}{','});
+14         getline(ifs,s,\textcolor{charliteral}{','});
+15         getline(ifs,aqi[i].AQI,\textcolor{charliteral}{','});\textcolor{comment}{//ignore year and readsDays}
+16         
+17         \textcolor{comment}{//ifs >> aqi[i].AQI >> comma;}
+18         getline(ifs,s);
+19     \}
+20     \textcolor{comment}{//aqi[0].county = s;}
+21     ifs.close();
+22     
+23 
+24 \}
+\end{DoxyCode}

@@ -1,0 +1,48 @@
+/** \page Specification
+
+This program lets the user see a linked list printed out in
+three different versions. It is also a program that helps
+practice the programmer's pointer skills.
+
+**/
+
+/** \page Analysis
+
+This program first runs with multiple functions, one function
+that displays the list, another which destroys the list, and
+the other three functions switches the format of how the program's
+list is printed for the user.
+
+**/
+
+/** \page Design
+
+The program first prints out and tells the user it is printing
+out the first output of the program which is the basic insert
+function with the list of cities. The program then destroys the
+list and prints out again which tells the user it is empty. Then 
+it prints out the second version of the list which is in
+alphbetical order. It then repeats the cycle which destroys the
+list again and tries to print out the list, but tells the user
+it is empty. Lastly, the third print out of the list prints the
+list backwards as it written. Then ends the program.
+**/
+
+/** \page Test 1
+
+\latexonly
+\includegraphics{../pic1lab2.png}
+\endlatexonly
+
+
+**/
+
+/** \page Test 2
+
+\latexonly
+\includegraphics{../pic2lab2.png}
+\endlatexonly
+
+
+**/
+

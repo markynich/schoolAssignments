@@ -1,0 +1,74 @@
+\hypertarget{PlayMusic_8cpp}{\subsection{Play\+Music.\+cpp File Reference}
+\label{PlayMusic_8cpp}\index{Play\+Music.\+cpp@{Play\+Music.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab3.\+h\char`\"{}}\\*
+Include dependency graph for Play\+Music.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{PlayMusic_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{PlayMusic_8cpp_a678c8ab56091134ef699893df8a5f683}{Play\+Music} (\hyperlink{structMUSICELMT}{M\+U\+S\+I\+C\+E\+L\+M\+T} music\mbox{[}$\,$\mbox{]}, float tempo)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{PlayMusic_8cpp_a678c8ab56091134ef699893df8a5f683}{\index{Play\+Music.\+cpp@{Play\+Music.\+cpp}!Play\+Music@{Play\+Music}}
+\index{Play\+Music@{Play\+Music}!Play\+Music.\+cpp@{Play\+Music.\+cpp}}
+\paragraph[{Play\+Music}]{\setlength{\rightskip}{0pt plus 5cm}void Play\+Music (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+U\+S\+I\+C\+E\+L\+M\+T}}]{music\mbox{[}$\,$\mbox{]}, }
+\item[{float}]{tempo}
+\end{DoxyParamCaption}
+)}}\label{PlayMusic_8cpp_a678c8ab56091134ef699893df8a5f683}
+
+\begin{DoxyCode}
+4 \{
+5     
+6     \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAXSTACK = 400, MAXARRAY = 9999;
+7     \hyperlink{structSTACK}{STACK} stack;
+8     \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880}{PLAY} type;
+9     
+10     \textcolor{keywordflow}{if} (\hyperlink{lab3_8h_abd657d26045a775f57a837427142cfbd}{Create}(stack, MAXSTACK) == \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED})
+11         \{
+12             std::cerr << \textcolor{stringliteral}{"*** MUSIC: Stack allocation error. ***\(\backslash\)n"} << std::endl;
+13             \textcolor{keywordflow}{return};
+14         \}
+15     
+16     \textcolor{keywordtype}{int} current = 0;
+17     \textcolor{keywordtype}{int} finish = MAXARRAY;
+18     
+19     
+20     \textcolor{keywordflow}{while} (\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}) 
+21         \{
+22     
+23             type = music[current].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type};
+24             \textcolor{keywordflow}{if} (current <= finish && type != \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}{PLAYSTOP})
+25                 \{
+26                     \textcolor{keywordflow}{if} (type == \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}{PLAYNOTE})
+27                         \hyperlink{lab3_8h_ad075a727cdddb38fe5bfa5d055e57161}{PlayNote}(music[current++].note, tempo);
+28                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}{PLAYFRAGMENT})
+29                         \{
+30                             \hyperlink{lab3_8h_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{Push}(stack, current+1);
+31                             \hyperlink{lab3_8h_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{Push}(stack, finish);
+32                             finish = music[current].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a3edee1f345e206cdc220b16d7d290018}{finish};
+33                             current = music[current].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a9a2c77dc5f1c259a9a063f8e6ae18724}{start};
+34                         \}
+35                 \}
+36             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{lab3_8h_a40fe826744e8cbbf7e208d037ef91072}{isEmpty}(stack))
+37                 \{
+38                   \hyperlink{lab3_8h_a9ab82590ff3d7086853fd9b2106d255c}{Pop}(stack, finish);
+39                   \hyperlink{lab3_8h_a9ab82590ff3d7086853fd9b2106d255c}{Pop}(stack, current);  
+40                 \}
+41             \textcolor{keywordflow}{else}
+42                 \textcolor{comment}{//nothing else to do}
+43                 \textcolor{keywordflow}{break};
+44     
+45         \}
+46     \hyperlink{lab3_8h_a7f5d0e2c1d5c45b52ee6d1d91e420e95}{Destroy}(stack);
+47 \}
+\end{DoxyCode}

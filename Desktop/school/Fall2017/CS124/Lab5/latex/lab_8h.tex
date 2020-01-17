@@ -1,0 +1,157 @@
+\hypertarget{lab_8h}{\subsection{lab.\+h File Reference}
+\label{lab_8h}\index{lab.\+h@{lab.\+h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+Include dependency graph for lab.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structAQIData}{A\+Q\+I\+Data}
+\item 
+class \hyperlink{classQUICKSORT}{Q\+U\+I\+C\+K\+S\+O\+R\+T$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$}
+\item 
+class \hyperlink{classMERGESORT}{M\+E\+R\+G\+E\+S\+O\+R\+T$<$ S\+O\+M\+E\+T\+Y\+P\+E $>$}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{lab_8h_a15de8e3dda2c911202abcc072d075935}{count\+Rows} (std\+::string f)
+\item 
+void \hyperlink{lab_8h_a3700d6a6f7a91d84cde0120413f3bf38}{read\+Data} (std\+::string f, \hyperlink{structAQIData}{A\+Q\+I\+Data} aqi\mbox{[}$\,$\mbox{]}, int n)
+\item 
+bool \hyperlink{lab_8h_a13fdefc73f3cd431a55216baf26cc200}{operator$>$} (\hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{lab_8h_a93458516135b93160c12abb810a55a99}{operator$<$} (\hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{lab_8h_aef88eef36e8415fda7d0720424b5cf6d}{operator$<$=} (\hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{lab_8h_a2f4ff8cbda09ef68585badaf2bb486f5}{operator$>$=} (\hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8h_a15de8e3dda2c911202abcc072d075935}{\index{lab.\+h@{lab.\+h}!count\+Rows@{count\+Rows}}
+\index{count\+Rows@{count\+Rows}!lab.\+h@{lab.\+h}}
+\paragraph[{count\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}int count\+Rows (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a15de8e3dda2c911202abcc072d075935}
+
+\begin{DoxyCode}
+4 \{   
+5     std::ifstream ifs(f.c\_str());
+6     \textcolor{keywordtype}{int} n = 0;
+7     std::string s;
+8     \textcolor{keywordflow}{while}(getline(ifs,s)) n++;
+9     ifs.close();
+10     \textcolor{keywordflow}{return} n;
+11 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a93458516135b93160c12abb810a55a99}{\index{lab.\+h@{lab.\+h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{{\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a93458516135b93160c12abb810a55a99}
+
+\begin{DoxyCode}
+3 \{
+4     \textcolor{keywordflow}{return} (lhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI} < rhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI});
+5 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_aef88eef36e8415fda7d0720424b5cf6d}{\index{lab.\+h@{lab.\+h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{{\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_aef88eef36e8415fda7d0720424b5cf6d}
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordflow}{return} (rhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI} <= rhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI});
+19 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a13fdefc73f3cd431a55216baf26cc200}{\index{lab.\+h@{lab.\+h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{{\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a13fdefc73f3cd431a55216baf26cc200}
+
+\begin{DoxyCode}
+7 \{
+8     \textcolor{keywordflow}{return} (lhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI} > rhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI});
+9 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a2f4ff8cbda09ef68585badaf2bb486f5}{\index{lab.\+h@{lab.\+h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{{\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a2f4ff8cbda09ef68585badaf2bb486f5}
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{keywordflow}{return} (lhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI} >= rhs.\hyperlink{structAQIData_a5077140b5e97ceba8b82a776647fb667}{AQI});
+14 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a3700d6a6f7a91d84cde0120413f3bf38}{\index{lab.\+h@{lab.\+h}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!lab.\+h@{lab.\+h}}
+\paragraph[{read\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void read\+Data (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{f, }
+\item[{{\bf A\+Q\+I\+Data}}]{aqi\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a3700d6a6f7a91d84cde0120413f3bf38}
+
+\begin{DoxyCode}
+4 \{
+5 
+6     std::ifstream ifs(f.c\_str());
+7     std::string s; \textcolor{keywordtype}{char} comma;
+8     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+9     \{
+10         getline(ifs,s,\textcolor{charliteral}{','});\textcolor{comment}{//reads state}
+11         getline(ifs,aqi[i].county,\textcolor{charliteral}{','});\textcolor{comment}{//reads county}
+12         getline(ifs,s,\textcolor{charliteral}{','});\textcolor{comment}{//ignores county and reads year}
+13         getline(ifs,s,\textcolor{charliteral}{','});
+14         getline(ifs,s,\textcolor{charliteral}{','});
+15         getline(ifs,aqi[i].AQI,\textcolor{charliteral}{','});\textcolor{comment}{//ignore year and readsDays}
+16         
+17         \textcolor{comment}{//ifs >> aqi[i].AQI >> comma;}
+18         getline(ifs,s);
+19     \}
+20     \textcolor{comment}{//aqi[0].county = s;}
+21     ifs.close();
+22     
+23 
+24 \}
+\end{DoxyCode}

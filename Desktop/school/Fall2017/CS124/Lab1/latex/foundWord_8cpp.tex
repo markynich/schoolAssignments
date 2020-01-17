@@ -1,0 +1,45 @@
+\hypertarget{foundWord_8cpp}{\subsection{found\+Word.\+cpp File Reference}
+\label{foundWord_8cpp}\index{found\+Word.\+cpp@{found\+Word.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for found\+Word.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{foundWord_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{foundWord_8cpp_abd296b13cd9c2eb14ca4bb5eae9766b3}{found\+Word} (const vector$<$ \hyperlink{structENTRY}{E\+N\+T\+R\+Y} $>$ \&dict, const string \&word, string \&translation)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{foundWord_8cpp_abd296b13cd9c2eb14ca4bb5eae9766b3}{\index{found\+Word.\+cpp@{found\+Word.\+cpp}!found\+Word@{found\+Word}}
+\index{found\+Word@{found\+Word}!found\+Word.\+cpp@{found\+Word.\+cpp}}
+\paragraph[{found\+Word}]{\setlength{\rightskip}{0pt plus 5cm}bool found\+Word (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf E\+N\+T\+R\+Y} $>$ \&}]{dict, }
+\item[{const string \&}]{word, }
+\item[{string \&}]{translation}
+\end{DoxyParamCaption}
+)}}\label{foundWord_8cpp_abd296b13cd9c2eb14ca4bb5eae9766b3}
+
+\begin{DoxyCode}
+19 \{
+20     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false}; \textcolor{comment}{//if the word is not found, it will return false}
+21     \textcolor{comment}{//integer for the for loop and len is for the length of the vector}
+22     \textcolor{keywordtype}{int} i, len = dict.size();
+23     \textcolor{comment}{/*for loop which is needed to find the word in dictionary}
+24 \textcolor{comment}{     which in turn gives the translation of the word*/}
+25     \textcolor{keywordflow}{for} (i = 0; !found && i < len; i++) \{
+26         \textcolor{keywordflow}{if} (dict[i].word == word)\{
+27             translation = dict[i].translation;
+28             found = \textcolor{keyword}{true};
+29         \}\textcolor{comment}{//end of if}
+30     \} \textcolor{comment}{//end of for}
+31     \textcolor{keywordflow}{return} found; \textcolor{comment}{//returns the translation to user for it to be output}
+32 \} \textcolor{comment}{//end of bool}
+\end{DoxyCode}

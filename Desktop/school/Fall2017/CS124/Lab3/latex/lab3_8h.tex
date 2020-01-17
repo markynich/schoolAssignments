@@ -1,0 +1,367 @@
+\hypertarget{lab3_8h}{\subsection{lab3.\+h File Reference}
+\label{lab3_8h}\index{lab3.\+h@{lab3.\+h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+Include dependency graph for lab3.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{lab3_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab3_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structSTACK}{S\+T\+A\+C\+K}
+\item 
+struct \hyperlink{structNOTE}{N\+O\+T\+E}
+\item 
+struct \hyperlink{structFRAGMENT}{F\+R\+A\+G\+M\+E\+N\+T}
+\item 
+struct \hyperlink{structMUSICELMT}{M\+U\+S\+I\+C\+E\+L\+M\+T}
+\end{DoxyCompactItemize}
+\subsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880}{P\+L\+A\+Y} \{ \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}{P\+L\+A\+Y\+N\+O\+T\+E}, 
+\hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}{P\+L\+A\+Y\+F\+R\+A\+G\+M\+E\+N\+T}, 
+\hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}{P\+L\+A\+Y\+S\+T\+O\+P}
+ \}
+\item 
+enum \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \{ \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{F\+A\+I\+L\+E\+D}, 
+\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{O\+K}
+ \}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{lab3_8h_abd657d26045a775f57a837427142cfbd}{Create} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int size)
+\item 
+\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{lab3_8h_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{Push} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int item)
+\item 
+\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{lab3_8h_a9ab82590ff3d7086853fd9b2106d255c}{Pop} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int \&item)
+\item 
+void \hyperlink{lab3_8h_a7f5d0e2c1d5c45b52ee6d1d91e420e95}{Destroy} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack)
+\item 
+bool \hyperlink{lab3_8h_a40fe826744e8cbbf7e208d037ef91072}{is\+Empty} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack)
+\item 
+bool \hyperlink{lab3_8h_aab5ae433a21f775d4a1874990475da63}{is\+Full} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack)
+\item 
+int \hyperlink{lab3_8h_a79338e55dccbfca7203b34ba96644cfd}{No\+Elements} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack)
+\item 
+void \hyperlink{lab3_8h_a465df42ae82d3c7db8516dc9d321450e}{read\+Song} (std\+::ifstream \&f, \hyperlink{structMUSICELMT}{M\+U\+S\+I\+C\+E\+L\+M\+T} music\mbox{[}$\,$\mbox{]}, int n)
+\item 
+void \hyperlink{lab3_8h_a678c8ab56091134ef699893df8a5f683}{Play\+Music} (\hyperlink{structMUSICELMT}{M\+U\+S\+I\+C\+E\+L\+M\+T} music\mbox{[}$\,$\mbox{]}, float tempo)
+\item 
+void \hyperlink{lab3_8h_ad075a727cdddb38fe5bfa5d055e57161}{Play\+Note} (\hyperlink{structNOTE}{N\+O\+T\+E} \&note, float tempo)
+\item 
+int \hyperlink{lab3_8h_a1e9336e47067f8c3e92d68bf3a361931}{number\+Of\+Chars} (std\+::ifstream \&f)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Enumeration Type Documentation}
+\hypertarget{lab3_8h_a41c816c739b4ab01c73879f01ae63880}{\index{lab3.\+h@{lab3.\+h}!P\+L\+A\+Y@{P\+L\+A\+Y}}
+\index{P\+L\+A\+Y@{P\+L\+A\+Y}!lab3.\+h@{lab3.\+h}}
+\paragraph[{P\+L\+A\+Y}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf P\+L\+A\+Y}}}\label{lab3_8h_a41c816c739b4ab01c73879f01ae63880}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{P\+L\+A\+Y\+N\+O\+T\+E@{P\+L\+A\+Y\+N\+O\+T\+E}!lab3.\+h@{lab3.\+h}}\index{lab3.\+h@{lab3.\+h}!P\+L\+A\+Y\+N\+O\+T\+E@{P\+L\+A\+Y\+N\+O\+T\+E}}\item[{\em 
+\hypertarget{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}{P\+L\+A\+Y\+N\+O\+T\+E}\label{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}
+}]\index{P\+L\+A\+Y\+F\+R\+A\+G\+M\+E\+N\+T@{P\+L\+A\+Y\+F\+R\+A\+G\+M\+E\+N\+T}!lab3.\+h@{lab3.\+h}}\index{lab3.\+h@{lab3.\+h}!P\+L\+A\+Y\+F\+R\+A\+G\+M\+E\+N\+T@{P\+L\+A\+Y\+F\+R\+A\+G\+M\+E\+N\+T}}\item[{\em 
+\hypertarget{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}{P\+L\+A\+Y\+F\+R\+A\+G\+M\+E\+N\+T}\label{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}
+}]\index{P\+L\+A\+Y\+S\+T\+O\+P@{P\+L\+A\+Y\+S\+T\+O\+P}!lab3.\+h@{lab3.\+h}}\index{lab3.\+h@{lab3.\+h}!P\+L\+A\+Y\+S\+T\+O\+P@{P\+L\+A\+Y\+S\+T\+O\+P}}\item[{\em 
+\hypertarget{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}{P\+L\+A\+Y\+S\+T\+O\+P}\label{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}
+}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}
+12 \{\hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}{PLAYNOTE},\hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}{PLAYFRAGMENT}, \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}{PLAYSTOP}\};
+\end{DoxyCode}
+\hypertarget{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}{\index{lab3.\+h@{lab3.\+h}!S\+T\+A\+T\+U\+S@{S\+T\+A\+T\+U\+S}}
+\index{S\+T\+A\+T\+U\+S@{S\+T\+A\+T\+U\+S}!lab3.\+h@{lab3.\+h}}
+\paragraph[{S\+T\+A\+T\+U\+S}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\+T\+A\+T\+U\+S}}}\label{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+A\+I\+L\+E\+D@{F\+A\+I\+L\+E\+D}!lab3.\+h@{lab3.\+h}}\index{lab3.\+h@{lab3.\+h}!F\+A\+I\+L\+E\+D@{F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{F\+A\+I\+L\+E\+D}\label{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}
+}]\index{O\+K@{O\+K}!lab3.\+h@{lab3.\+h}}\index{lab3.\+h@{lab3.\+h}!O\+K@{O\+K}}\item[{\em 
+\hypertarget{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{O\+K}\label{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}
+}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}
+13 \{\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED}, \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}\};
+\end{DoxyCode}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab3_8h_abd657d26045a775f57a837427142cfbd}{\index{lab3.\+h@{lab3.\+h}!Create@{Create}}
+\index{Create@{Create}!lab3.\+h@{lab3.\+h}}
+\paragraph[{Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Create (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_abd657d26045a775f57a837427142cfbd}
+
+\begin{DoxyCode}
+10 \{
+11     stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[size];
+12     \textcolor{keywordflow}{if} (!stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf})
+13         \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+14     stack.\hyperlink{structSTACK_ad10f9d8025122e8c82832d7a34c77e40}{size} = size;
+15     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} = 0;
+16     \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+17 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a7f5d0e2c1d5c45b52ee6d1d91e420e95}{\index{lab3.\+h@{lab3.\+h}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!lab3.\+h@{lab3.\+h}}
+\paragraph[{Destroy}]{\setlength{\rightskip}{0pt plus 5cm}void Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_a7f5d0e2c1d5c45b52ee6d1d91e420e95}
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keyword}{delete} [] stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf};
+46 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a40fe826744e8cbbf7e208d037ef91072}{\index{lab3.\+h@{lab3.\+h}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!lab3.\+h@{lab3.\+h}}
+\paragraph[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{lab3_8h_a40fe826744e8cbbf7e208d037ef91072}
+
+\begin{DoxyCode}
+20                                   \{
+21         \textcolor{keywordflow}{return} bool(stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} ==0);
+22 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_aab5ae433a21f775d4a1874990475da63}{\index{lab3.\+h@{lab3.\+h}!is\+Full@{is\+Full}}
+\index{is\+Full@{is\+Full}!lab3.\+h@{lab3.\+h}}
+\paragraph[{is\+Full}]{\setlength{\rightskip}{0pt plus 5cm}bool is\+Full (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{lab3_8h_aab5ae433a21f775d4a1874990475da63}
+
+\begin{DoxyCode}
+24                                  \{
+25         \textcolor{keywordflow}{return} bool(stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} ==stack.\hyperlink{structSTACK_ad10f9d8025122e8c82832d7a34c77e40}{size});
+26 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a79338e55dccbfca7203b34ba96644cfd}{\index{lab3.\+h@{lab3.\+h}!No\+Elements@{No\+Elements}}
+\index{No\+Elements@{No\+Elements}!lab3.\+h@{lab3.\+h}}
+\paragraph[{No\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}int No\+Elements (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{lab3_8h_a79338e55dccbfca7203b34ba96644cfd}
+
+\begin{DoxyCode}
+28                                     \{
+29         \textcolor{keywordflow}{return} stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp};
+30 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a1e9336e47067f8c3e92d68bf3a361931}{\index{lab3.\+h@{lab3.\+h}!number\+Of\+Chars@{number\+Of\+Chars}}
+\index{number\+Of\+Chars@{number\+Of\+Chars}!lab3.\+h@{lab3.\+h}}
+\paragraph[{number\+Of\+Chars}]{\setlength{\rightskip}{0pt plus 5cm}int number\+Of\+Chars (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_a1e9336e47067f8c3e92d68bf3a361931}
+
+\begin{DoxyCode}
+4 \{
+5 
+6     \textcolor{keywordtype}{int} n = 0;
+7     \textcolor{keywordtype}{char} c;
+8     \textcolor{keywordflow}{while}(f >> c)
+9         n++;
+10     \textcolor{comment}{//count characters}
+11     \textcolor{keywordflow}{return} n;
+12 
+13 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a678c8ab56091134ef699893df8a5f683}{\index{lab3.\+h@{lab3.\+h}!Play\+Music@{Play\+Music}}
+\index{Play\+Music@{Play\+Music}!lab3.\+h@{lab3.\+h}}
+\paragraph[{Play\+Music}]{\setlength{\rightskip}{0pt plus 5cm}void Play\+Music (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+U\+S\+I\+C\+E\+L\+M\+T}}]{music\mbox{[}$\,$\mbox{]}, }
+\item[{float}]{tempo}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_a678c8ab56091134ef699893df8a5f683}
+
+\begin{DoxyCode}
+4 \{
+5     
+6     \textcolor{keyword}{const} \textcolor{keywordtype}{int} MAXSTACK = 400, MAXARRAY = 9999;
+7     \hyperlink{structSTACK}{STACK} stack;
+8     \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880}{PLAY} type;
+9     
+10     \textcolor{keywordflow}{if} (\hyperlink{lab3_8h_abd657d26045a775f57a837427142cfbd}{Create}(stack, MAXSTACK) == \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED})
+11         \{
+12             std::cerr << \textcolor{stringliteral}{"*** MUSIC: Stack allocation error. ***\(\backslash\)n"} << std::endl;
+13             \textcolor{keywordflow}{return};
+14         \}
+15     
+16     \textcolor{keywordtype}{int} current = 0;
+17     \textcolor{keywordtype}{int} finish = MAXARRAY;
+18     
+19     
+20     \textcolor{keywordflow}{while} (\hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}) 
+21         \{
+22     
+23             type = music[current].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type};
+24             \textcolor{keywordflow}{if} (current <= finish && type != \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}{PLAYSTOP})
+25                 \{
+26                     \textcolor{keywordflow}{if} (type == \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}{PLAYNOTE})
+27                         \hyperlink{lab3_8h_ad075a727cdddb38fe5bfa5d055e57161}{PlayNote}(music[current++].note, tempo);
+28                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}{PLAYFRAGMENT})
+29                         \{
+30                             \hyperlink{lab3_8h_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{Push}(stack, current+1);
+31                             \hyperlink{lab3_8h_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{Push}(stack, finish);
+32                             finish = music[current].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a3edee1f345e206cdc220b16d7d290018}{finish};
+33                             current = music[current].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a9a2c77dc5f1c259a9a063f8e6ae18724}{start};
+34                         \}
+35                 \}
+36             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{lab3_8h_a40fe826744e8cbbf7e208d037ef91072}{isEmpty}(stack))
+37                 \{
+38                   \hyperlink{lab3_8h_a9ab82590ff3d7086853fd9b2106d255c}{Pop}(stack, finish);
+39                   \hyperlink{lab3_8h_a9ab82590ff3d7086853fd9b2106d255c}{Pop}(stack, current);  
+40                 \}
+41             \textcolor{keywordflow}{else}
+42                 \textcolor{comment}{//nothing else to do}
+43                 \textcolor{keywordflow}{break};
+44     
+45         \}
+46     \hyperlink{lab3_8h_a7f5d0e2c1d5c45b52ee6d1d91e420e95}{Destroy}(stack);
+47 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_ad075a727cdddb38fe5bfa5d055e57161}{\index{lab3.\+h@{lab3.\+h}!Play\+Note@{Play\+Note}}
+\index{Play\+Note@{Play\+Note}!lab3.\+h@{lab3.\+h}}
+\paragraph[{Play\+Note}]{\setlength{\rightskip}{0pt plus 5cm}void Play\+Note (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+T\+E} \&}]{note, }
+\item[{float}]{tempo}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_ad075a727cdddb38fe5bfa5d055e57161}
+
+\begin{DoxyCode}
+4 \{
+5     std::ifstream inputFile(\textcolor{stringliteral}{"music"});
+6     \textcolor{keywordtype}{int} n = \hyperlink{lab3_8h_a1e9336e47067f8c3e92d68bf3a361931}{numberOfChars}(inputFile);
+7     std::cout << \textcolor{stringliteral}{"Music has "} << n << \textcolor{stringliteral}{" Characters\(\backslash\)n"};
+8     inputFile.close();
+9     \hyperlink{structMUSICELMT}{MUSICELMT} *music;
+10     music = \textcolor{keyword}{new} \hyperlink{structMUSICELMT}{MUSICELMT}[n];
+11     inputFile.open(\textcolor{stringliteral}{"music"});
+12     \hyperlink{lab3_8h_a465df42ae82d3c7db8516dc9d321450e}{readSong}(inputFile, music, n);
+13     inputFile.close();
+14         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i< n; i++)
+15         \{
+16             \textcolor{keywordflow}{if}(music[i].type == \textcolor{charliteral}{'n'})
+17             std::cout << music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_ae03dbb1306465fe61ec10da05fa5782e}{tone} << \textcolor{stringliteral}{" "}
+18             << music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_a258adf07267f95ab9630b33bad1b2fe2}{duration} << std::endl;
+19         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(music[i].type == \textcolor{charliteral}{'f'})
+20             std::cout << music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a9a2c77dc5f1c259a9a063f8e6ae18724}{start} << \textcolor{stringliteral}{" "}
+21                 << music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a3edee1f345e206cdc220b16d7d290018}{finish} << std::endl;
+22         \}
+23         std::string s1 = \textcolor{stringliteral}{"play -qn synth "};
+24         std::string s2 = \textcolor{stringliteral}{" pluck "};
+25         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < n; i++)
+26         \{
+27         std::string ms = s1 + std:: to\_string(music[i].note.\hyperlink{structNOTE_a258adf07267f95ab9630b33bad1b2fe2}{duration}/16.0)
+28                         + s2 + music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_ae03dbb1306465fe61ec10da05fa5782e}{tone};
+29         std::cout << ms << std::endl;
+30         system(ms.c\_str());
+31         
+32     \}
+33 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a9ab82590ff3d7086853fd9b2106d255c}{\index{lab3.\+h@{lab3.\+h}!Pop@{Pop}}
+\index{Pop@{Pop}!lab3.\+h@{lab3.\+h}}
+\paragraph[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Pop (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_a9ab82590ff3d7086853fd9b2106d255c}
+
+\begin{DoxyCode}
+33 \{
+34     
+35     \textcolor{keywordflow}{if} (stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} == 0)
+36         \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+37     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}--;
+38     item = stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf}[stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}];
+39     \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+40 
+41 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a805a86f7ac8e643c87ea7d7cbb1b2c9c}{\index{lab3.\+h@{lab3.\+h}!Push@{Push}}
+\index{Push@{Push}!lab3.\+h@{lab3.\+h}}
+\paragraph[{Push}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Push (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int}]{item}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_a805a86f7ac8e643c87ea7d7cbb1b2c9c}
+
+\begin{DoxyCode}
+23 \{
+24 
+25     \textcolor{keywordflow}{if} (stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} == stack.\hyperlink{structSTACK_ad10f9d8025122e8c82832d7a34c77e40}{size})
+26         \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+27     stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf}[stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}] = item;
+28     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}++;
+29     \textcolor{keywordflow}{return} \hyperlink{lab3_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+30 \}
+\end{DoxyCode}
+\hypertarget{lab3_8h_a465df42ae82d3c7db8516dc9d321450e}{\index{lab3.\+h@{lab3.\+h}!read\+Song@{read\+Song}}
+\index{read\+Song@{read\+Song}!lab3.\+h@{lab3.\+h}}
+\paragraph[{read\+Song}]{\setlength{\rightskip}{0pt plus 5cm}void read\+Song (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{f, }
+\item[{{\bf M\+U\+S\+I\+C\+E\+L\+M\+T}}]{music\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{lab3_8h_a465df42ae82d3c7db8516dc9d321450e}
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordtype}{int} i = 0; \textcolor{keywordtype}{char} type;
+7     \textcolor{keywordflow}{while}(f >> type)
+8     \{
+9         \textcolor{comment}{//type = music[i].type;}
+10         \textcolor{keywordflow}{if} (type == \textcolor{charliteral}{'n'})
+11             \{
+12             f >> music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_ae03dbb1306465fe61ec10da05fa5782e}{tone} >> music[i].\hyperlink{structMUSICELMT_a662fdb18330107012ed8902725b08e5c}{note}.\hyperlink{structNOTE_a258adf07267f95ab9630b33bad1b2fe2}{duration};
+13             music[i].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type} = \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a3e1a299c993f58cef9ff1e4853051f02}{PLAYNOTE};
+14             \}
+15         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (type == \textcolor{charliteral}{'f'})
+16             \{
+17             f >> music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.\hyperlink{structFRAGMENT_a9a2c77dc5f1c259a9a063f8e6ae18724}{start} >> music[i].\hyperlink{structMUSICELMT_ae418bce8087e7510ad8563a87b4c1c63}{fragment}.
+      \hyperlink{structFRAGMENT_a3edee1f345e206cdc220b16d7d290018}{finish};
+18             music[i].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type} = \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a0fab3b3b81cc5ad4ac6d6b74b50869e5}{PLAYFRAGMENT};
+19             \}
+20         i++;
+21     \}
+22     music[i].\hyperlink{structMUSICELMT_aa9a541d279b1a98b190c1968217ad37f}{type} = \hyperlink{lab3_8h_a41c816c739b4ab01c73879f01ae63880a2175f634cdffa7045d36d1b0cca00ed4}{PLAYSTOP};
+23 \}
+\end{DoxyCode}
