@@ -1,0 +1,19 @@
+package MathGame;
+
+
+public class mathGameApp extends GUI{
+	public static void main(String[] args)
+	{
+
+		LoadFile  lf = new LoadFile();
+		//GUI graphics = new GUI();
+		lf.openReadFile();
+		lf.readFile();
+		//lf.openWriteFile();
+		lf.BubbleSort(lf.getCount());
+		System.out.println(lf.topFive());
+		//graphics.run();	
+		lf.closeReadFile();
+		//lf.closeWriteFile();
+	}
+}

@@ -1,0 +1,12 @@
+package MathGame;
+
+import java.util.*;
+
+public class Lists 
+{
+	/*
+	 * Two Lists to hold information and sort them
+	 */
+	ArrayList<Integer> scores = new ArrayList<Integer>();
+	ArrayList<String> names = new ArrayList<String>();	
+}

@@ -1,0 +1,23 @@
+package MathGame;
+
+
+public class mathGameApp extends GUI{
+	public static void main(String[] args)
+	{
+
+		LoadFile  lf = new LoadFile();
+		GUI graphics = new GUI();
+		lf.openReadFile();
+		lf.readFile();
+		//lf.openWriteFile();
+		lf.BubbleSort(lf.getCount());
+		System.out.println(lf.topFive());
+		//System.out.println(lf.getScore1());
+		//mg.randomize();
+		graphics.topFiveScore1();
+		graphics.run();	
+		//lf.addIntoList(mg.getName(),mg.getHighScore()); <- add into linklist
+		lf.closeReadFile();
+		//lf.closeWriteFile();
+	}
+}

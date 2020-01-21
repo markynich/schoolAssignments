@@ -1,0 +1,11 @@
+package MathGame;
+
+public class mathGameApp {
+	public static void main(String[] args)
+	{
+		WriteFile wf = new WriteFile();
+		wf.openFile();
+		wf.addScores();
+		wf.closeFile();
+	}
+}

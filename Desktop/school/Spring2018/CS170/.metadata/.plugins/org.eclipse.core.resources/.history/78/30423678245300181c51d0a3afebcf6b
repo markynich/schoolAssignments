@@ -1,0 +1,173 @@
+package MathGame;
+
+
+import java.io.*;
+import java.util.*;
+
+
+public class LoadFile extends Lists
+{
+	private Scanner read; //obj to read txt file
+	private PrintWriter write; //obj to write in txt file
+	private int count; //variable to count amount of entries 
+	private String score1;
+	Lists list = new Lists(); //obj to use class List
+	
+	public String getScore1()
+	{
+		return score1;
+	}
+	
+	public void setScore1(String score1)
+	{
+		this.score1 = score1;
+	}
+	/*
+	 * makes it able to read the file highscore.txt
+	 */
+	public void openReadFile()
+	{
+		try
+		{
+			read = new Scanner (new File("highscore.txt"));
+		}
+		catch (Exception e)
+		{
+			System.out.println("File is not readable");
+		}
+	}
+	/*
+	 * readFile reads the file and enters the names
+	 * and highscores into the ArrayLists of name and score.
+	 * also counts the amount of entries.
+	 */
+	public void readFile()
+	{
+		while(read.hasNext())
+		{
+			String name = read.next();
+			list.names.add(name);
+			String Sscore = read.next();
+			int score = Integer.parseInt(Sscore);
+			list.scores.add(score);
+			count++;
+		}
+	}
+	/*
+	 * Sorts the two array lists
+	 */
+	public int getCount()
+	{
+		return count;
+	}
+	
+	public void setCount (int c)
+	{
+		this.count = c;
+	}
+	
+	public void BubbleSort(int size)
+	{
+		boolean run = false;
+		size = size-1;
+		while(run == false)
+		{
+			run = true;
+			for (int i=0; i<size; i++)
+			{
+				if (list.scores.get(i) < list.scores.get(i+1))
+				{
+					int intTemp = list.scores.get(i);
+					list.scores.set(i,list.scores.get(i+1));
+					list.scores.set(i+1, intTemp);
+					String stringTemp = list.names.get(i);
+					list.names.set(i,list.names.get(i+1));
+					list.names.set(i+1, stringTemp);
+					run = false;
+				}
+			}
+		}
+	}
+	/*
+	 * prints our the top five scores
+	 */
+	public String topFive()
+	{
+		String score = "";
+		for(int i=0;i<5; i++)
+		{
+			String n = list.names.get(i);
+			int s = list.scores.get(i);
+			score += (i+1 + " " + n + " " + s + "\n");
+		}
+		return score;
+	}
+	
+	public void setHighscore1()
+	{
+		String s = list.names.get(0);
+		int n = list.scores.get(0);
+		score1 = (s + " " + n);
+	}
+	//closes ReadFile
+	public void closeReadFile()
+	{
+		read.close();
+	}
+	/*
+	 * resets highscore.txt and opens to be able to write
+	 * new score into it
+	 */
+	public void openWriteFile() 
+	{
+		try 
+		{
+			write = new PrintWriter("highscore.txt");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Cannot Create file");
+		}
+	}
+	/*
+	 * Copy List into highscore.txt again
+	 */
+	public void copyList() throws FileNotFoundException
+	{
+		int size = getCount();
+		for(int i=0;i<size;i++)
+		{
+			String name = list.names.get(i);
+			String scores = Integer.toString(list.scores.get(i)); 
+			String list = name + " " + scores;
+			System.out.print(list);
+			write.println(list);
+			write.close();
+		}
+	}
+	/*
+	 * write into highscore.txt
+	 */
+	public void addIntoList(String name, int score)
+	{
+		String list = "\n" + name + " " + score;
+		try {
+			write.write(list);
+			
+		}catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	//closes WriteFile
+	public void closeWriteFile()
+	{
+		try {
+			write.close();
+			
+		}catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+}

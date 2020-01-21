@@ -1,0 +1,10 @@
+package MathGame;
+
+
+public class mathGameApp extends GUI{
+	public static void main(String[] args)
+	{
+		GUI graphics = new GUI();
+		graphics.run();	
+	}
+}

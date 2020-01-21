@@ -1,0 +1,22 @@
+package MathGame;
+
+import java.awt.EventQueue;
+
+public class mathGameApp extends GUI{
+	public static void main(String[] args)
+	{
+
+		LoadFile  lf = new LoadFile();
+		mathGame mg = new mathGame();
+		GUI graphics = new GUI();
+		lf.openReadFile();
+		lf.readFile();
+		lf.BubbleSort(lf.getCount());
+		lf.setScore1(lf.setHighscore1(0));
+		System.out.println(lf.getScore1());
+		//mg.randomize();
+		graphics.run();			
+		//lf.addIntoList(mg.getName(),mg.getHighScore()); <- add into linklist
+		lf.closeReadFile();
+	}
+}

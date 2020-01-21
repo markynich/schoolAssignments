@@ -1,0 +1,60 @@
+
+/*********************************************************************
+Name: Patrick, Kerolles, Mark, Denna
+Course: CS170-01
+Lab #: Lab 4
+Submission Date: 10:00pm, Wednesday 5/9/18
+Brief Description: This class contains the methods to read and write
+into highscore.txt. Saves and loads the scores from the game. Also
+sorts the scores to top five. Overrides toString to print the scores
+into the GUI
+**********************************************************************/
+
+package MathGame;
+import java.util.*;
+public class mathGame extends LoadFile
+{
+	
+	private int highScore, a, b, sum;
+	private String name;
+	Random rnd = new Random(); //to randomize our numbers
+	Scanner user = new Scanner(System.in); //user input
+	
+	/*
+	 * Getters and Setters
+	 */
+	public int getHighScore() {return highScore;}
+	public void setHighScore(int highScore) { this.highScore += highScore;}
+	public void resetHighScore(int highScore) {this.highScore = highScore;}
+	public int getA() {return a;}
+	public int getB() {return b;}
+	public String getName() {return name;}
+	public void setName(String name) {this.name = name;}
+	public void setA(int a) 
+	{
+		a = rnd.nextInt(100);
+		this.a = a;
+	}
+	public void setB(int b) 
+	{
+		b = rnd.nextInt(100);
+		this.b = b;
+	}
+	public int getSum() {
+		return sum;
+	}
+	public void setSum(int sum) {
+		sum = a+b;
+		this.sum = sum;
+	}
+	/*
+	 * Method to randomize the numbers for the equation
+	 */
+	public void randomize()
+	{
+		setB(1);
+		setA(1);
+		setSum(1);
+	}
+}
+

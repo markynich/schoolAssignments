@@ -1,0 +1,90 @@
+package MathGame;
+
+
+import java.util.*;
+
+
+public class mathGame extends LoadFile
+{
+	
+	private int highScore, a, b, sum;
+	private String name;
+	Random rnd = new Random(); //to randomize our numbers
+	Scanner user = new Scanner(System.in); //user input
+	
+	/*
+	 * Getters and Setters
+	 */
+	public int getHighScore() {return highScore;}
+	public void setHighScore(int highScore) { this.highScore += highScore;}
+	public void resetHighScore(int highScore) {this.highScore = highScore;}
+	public int getA() {return a;}
+	public int getB() {return b;}
+	public void setA(int a) 
+	{
+		a = rnd.nextInt(100);
+		this.a = a;
+	}
+	public void setB(int b) 
+	{
+		b = rnd.nextInt(100);
+		this.b = b;
+	}
+	public int getSum() {
+		return sum;
+	}
+	public void setSum(int sum) {
+		sum = a+b;
+		this.sum = sum;
+	}
+	public String getName() {return name;}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void randomize()
+	{
+		setB(1);
+		setA(1);
+		setSum(1);
+	}
+	/*
+	 * Equation method for out program
+	 * randomizes two numbers and use must do the math
+	 * if correct, they continue, if not it stops
+	 * counts every time they get it correct
+	 */
+	public void equationGen()
+	{
+		boolean play = true;
+		int input;
+		while (play == true)
+		{
+			setB(1);
+			setA(1);
+			setSum(1);
+			System.out.println("What is the answer of " +getB() + " + " + getA());
+			input = user.nextInt();
+			if(input == getSum())
+			{
+				System.out.println("Correct! Next Equation");
+				highScore += 1; 
+			}
+			else
+			{
+			System.out.println("Correct Answer: " + getSum() + "\nScore: " + getHighScore() + " GoodBye");
+			play = false;
+			}
+		}
+	}
+	
+	/*
+	 * To add the score of the user
+	 */
+	
+	public void addScore()
+	{
+		sethScore(Integer.toString(highScore));
+	}
+	
+}
+

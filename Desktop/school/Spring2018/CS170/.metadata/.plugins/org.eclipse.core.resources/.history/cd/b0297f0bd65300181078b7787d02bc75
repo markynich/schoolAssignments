@@ -1,0 +1,35 @@
+
+/*********************************************************************
+Name: Kerolles, Denna, Patrick, Mark
+Course: CS170-01
+Lab #: Lab 4
+Submission Date: 10:00pm, Wednesday 4/20/18
+Brief Description: This program contains the class that all the 
+methods, even the main method to run the program.
+**********************************************************************/
+
+
+package MathGame;
+
+import javax.swing.JOptionPane;
+
+public class Validator 
+{
+	public static String validName(String n)
+	{
+		while(!n.matches("[a-zA-Z]+"))
+		{
+			n = JOptionPane.showInputDialog("Error! Please enter a name: ");
+		}
+		return n;
+	}
+	
+	public static String validNumber(String n)
+	{
+		while(!n.matches("[0-9]+"))
+		{
+			n = JOptionPane.showInputDialog("Error! Please enter a number: ");
+		}
+		return n;
+	}
+}

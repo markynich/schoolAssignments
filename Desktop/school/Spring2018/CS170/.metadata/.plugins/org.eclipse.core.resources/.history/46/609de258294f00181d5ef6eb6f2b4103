@@ -1,0 +1,33 @@
+package MathGame;
+
+
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+public class LoadFile 
+{
+	private Formatter file;
+	
+	public void openFile() 
+	{
+		try 
+		{
+			file = new Formatter("highscore.txt");
+		}
+		catch (Exception e)
+		{
+			System.out.println("Cannot Create file");
+		}
+	}
+	
+	public void addScores()
+	{
+		file.format("%s%s", "Gao ", "500");
+	}
+	
+	public void closeFile()
+	{
+		file.close();
+	}
+}
